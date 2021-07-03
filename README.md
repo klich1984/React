@@ -21,4 +21,22 @@ APIS:
 - [lyrics.ovh](https://lyrics.ovh/)
 App que busca canciones y la letra de la cancion consumiendo dos Apis, usando MATERIAL-UI.
 
-Despliegue de proyecto en Netlify githubPages y servidor compartido(Subiendo el contenido por ftp)
+Despliegue de proyecto en:
+
+[Netlify](https://vigorous-benz-d1e187.netlify.app/)
+
+-En githubPages
+  - Primero instalar dependencia de githubPages como dependencia de desarrollo (`npm i -gh-pages -D`)
+  - Segundo en el package.json agregar una propiedad llamada `"homepage": "./"`
+  - Agregar dos comandos en scripts `"predeploy": "npm run build"` y `"deploy": "gh-pages-d build"`
+[githubPages](https://klich1984.github.io/React/)
+
+
+y servidor compartido(Subiendo el contenido por ftp)
+
+[App en servidor](https://carlosum369.com/build/#/)
+
+- Para este ultimo se debe tener en cuenta la importacion de archivos ya que por defecto el build las toma desde la raiz del servidor y no desde la carpeta actual. `(./)`
+Para solucionarlo se agraga en el package.json una propiedad llamada `"homepage": "./"`
+
+- Ademas se debe activar la funcionalidad para tener las rutas mas amigables con HASrouter en App.js
