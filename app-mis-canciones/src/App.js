@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, HashRouter } from 'react-router-dom'
 // CssBaseline se usa para tener los estilos base
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Header from './components/Header'
@@ -84,64 +84,67 @@ function App() {
 
   return (
     <Router>
-      <CssBaseline>
-        <div className="App">
-          {/* Utilizamos el componente Header */}
-          <Header />
-          <main className="App-main">
-            {/* Creamos enrutador */}
-            <Switch>
-              {/* Inicialmente renderizamos el home directamente */}
-              <Route exact path="/">
-                <Buscador
-                  search={search}
-                  setSearch={setSearch}
-                  setError={setError} />
-                {/* Solo se visualiza si ya realizamos una busqueda para eso realizamos un condicional de renderizado*/}
-                {/* si esta propiedad esta en falso */}
-                {!search.request
-                  ? (error
-                      ? (
-                        <Alert
-                          severity="error"
-                          style={{maxWidth: 752, margin: "2rem, auto, 0"}}>
-                          <AlertTitle>Error</AlertTitle>
-                          Hubo un problema al consultar
-                          <ul>
-                            <li>El Artista: <b>{search.artist}</b> o </li>
-                            <li>La cancion <b>{search.song}</b></li>
-                          </ul>
-                        </Alert>
+      {/* HASrouter para tener rutas amigables en servidor ftp manejo de rutas inaxistentes*/}
+      <HashRouter basename="/">
+        <CssBaseline>
+          <div className="App">
+            {/* Utilizamos el componente Header */}
+            <Header />
+            <main className="App-main">
+              {/* Creamos enrutador */}
+              <Switch>
+                {/* Inicialmente renderizamos el home directamente */}
+                <Route exact path="/">
+                  <Buscador
+                    search={search}
+                    setSearch={setSearch}
+                    setError={setError} />
+                  {/* Solo se visualiza si ya realizamos una busqueda para eso realizamos un condicional de renderizado*/}
+                  {/* si esta propiedad esta en falso */}
+                  {!search.request
+                    ? (error
+                        ? (
+                          <Alert
+                            severity="error"
+                            style={{maxWidth: 752, margin: "2rem, auto, 0"}}>
+                            <AlertTitle>Error</AlertTitle>
+                            Hubo un problema al consultar
+                            <ul>
+                              <li>El Artista: <b>{search.artist}</b> o </li>
+                              <li>La cancion <b>{search.song}</b></li>
+                            </ul>
+                          </Alert>
+                        )
+                        : (<ListaCanciones mySongs={mySongs} setMySongs={setMySongs}/>)
                       )
-                      : (<ListaCanciones mySongs={mySongs} setMySongs={setMySongs}/>)
-                    )
-                    // Si el objeto current Songs esta vacio (No tiene propiedades) para evitar que se cargue al DOM el componente vacio ya que recibe parametros de la peticion
-                  : Object.keys(currentSong).length === 0
-                    ? (<Loader />)
-                    : (
-                        (<Letra
-                          // La cancion actual para que despliegue la informacion
-                          currentSong={currentSong}
-                          // para limpiar la n actual
-                          setCurrentSong={setCurrentSong}
-                          // el arreglo para agregar a la lista o eliminar canciones
-                          mySongs={mySongs}
-                          setMySongs={setMySongs}
-                          // Para limpiar el buscador
-                          setSearch={setSearch} />
-                          )
-                      )
-                }
-              </Route>
-              {/* El componente cancion lo renderizamos de esta manera ya que va recibir una prop */}
-              <Route
-                path="/cancion/:id"
-                children={<Cancion mySongs={mySongs}/>} />
-              <Route path="*" component={Error404} />
-            </Switch>
-          </main>
-        </div>
-      </CssBaseline>
+                      // Si el objeto current Songs esta vacio (No tiene propiedades) para evitar que se cargue al DOM el componente vacio ya que recibe parametros de la peticion
+                    : Object.keys(currentSong).length === 0
+                      ? (<Loader />)
+                      : (
+                          (<Letra
+                            // La cancion actual para que despliegue la informacion
+                            currentSong={currentSong}
+                            // para limpiar la n actual
+                            setCurrentSong={setCurrentSong}
+                            // el arreglo para agregar a la lista o eliminar canciones
+                            mySongs={mySongs}
+                            setMySongs={setMySongs}
+                            // Para limpiar el buscador
+                            setSearch={setSearch} />
+                            )
+                        )
+                  }
+                </Route>
+                {/* El componente cancion lo renderizamos de esta manera ya que va recibir una prop */}
+                <Route
+                  path="/cancion/:id"
+                  children={<Cancion mySongs={mySongs}/>} />
+                <Route path="*" component={Error404} />
+              </Switch>
+            </main>
+          </div>
+        </CssBaseline>
+      </HashRouter>
     </Router>
   )
 }
