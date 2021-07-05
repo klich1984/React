@@ -4,7 +4,9 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Header from './components/Header'
 import Search from './components/Search'
 import Error from './components/Error'
+import Message from './components/Message'
 import Cards from './components/cards/Cards'
+import Loader from './components/Loader'
 
 
 function App() {
@@ -19,8 +21,6 @@ function App() {
   const [search, setSearch] = useState(searchInit)
   // Store response
   const [myResponse, setMyResponse] = useState(myResponseInit)
-  // to know what anime I'm consulting
-  const [currentAnime, setCurrentAnime] = useState({})
   // help charge loader and errors
   const [error, setError] = useState(false)
 
@@ -48,7 +48,6 @@ function App() {
           newListAnime.push(animes)
         })
         setMyResponse(newListAnime)
-        // console.log("My new Response", myResponse)
 
       } catch (error) {
         // console.log(error)
@@ -81,8 +80,13 @@ function App() {
             setError={setError}/>
           {
             (!search.request)
-              ? <h2>Realiza una busqueda</h2>
-              : <Cards listAnime={myResponse}/>
+              ? (error
+                  ? <Error search={search} />
+                  : <Message />
+                )
+              : (myResponse.length === 0)
+                ? <Loader />
+                : <Cards listAnime={myResponse}/>
           }
         </main>
       </div>

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import IconButton from '@material-ui/core/IconButton'
 import SearchIcon from '@material-ui/icons/Search'
-import ClearTwoToneIcon from '@material-ui/icons/ClearTwoTone'
+import ClearSearch from './ClearSearch'
 
 // Styles
 const useStyles = makeStyles(theme => ({
@@ -20,14 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     paddingLeft: "47px"
-  },
-  clear: {
-    display: "flex",
-    paddingLeft: "47px",
-
-    "& h3": {
-      alignSelf: "center"
-    }
   }
 }))
 
@@ -44,20 +36,10 @@ const Search = ({search, setSearch, setMyResponse, setError}) => {
       request: true
     })
 
+      setError(false)
     // setTimeout(() => {
     //   handleReset()
     // }, 3000);
-  }
-
-  // search reset
-  const handleReset = e => {
-    // alert("reseteando")
-    setSearch({
-      anime: '',
-      request: false
-    })
-    // reset Request Variable
-    setMyResponse([])
   }
 
   // the value attribute to have a controlled form
@@ -86,12 +68,11 @@ const Search = ({search, setSearch, setMyResponse, setError}) => {
             <SearchIcon fontSize="large"/>
           </IconButton>
       </form>
-      <div className={clasess.clear}>
-          <h3>Clear Search</h3>
-          <IconButton color="primary" type="reset" onClick={handleReset}>
-            <ClearTwoToneIcon fontSize="large"/>
-          </IconButton>
-      </div>
+      {
+        (!search.request)
+          ? null
+          : <ClearSearch setSearch={setSearch} setMyResponse={setMyResponse}/>
+      }
     </div>
   )
 }
