@@ -4,9 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Header from './components/Header'
 import Search from './components/Search'
 import Error from './components/Error'
-import Cards from './components/Cards'
-import Card from './components/Card'
-import TextMobileStepper from './components/Carrusel'
+import Cards from './components/cards/Cards'
 
 
 function App() {
@@ -44,7 +42,8 @@ function App() {
             id: anime.mal_id,
             name: anime.title,
             avatar: anime.image_url,
-            score: anime.score
+            score: anime.score,
+            url: anime.url
           }
           newListAnime.push(animes)
         })
@@ -78,12 +77,12 @@ function App() {
           <Search
             search={search}
             setSearch={setSearch}
+            setMyResponse={setMyResponse}
             setError={setError}/>
           {
             (!search.request)
               ? <h2>Realiza una busqueda</h2>
-              : <Cards
-                  listAnime={myResponse}/>
+              : <Cards listAnime={myResponse}/>
           }
         </main>
       </div>

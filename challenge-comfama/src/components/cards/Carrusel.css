@@ -1,0 +1,38 @@
+button.rec-dot{
+	background-color: #ff277d44;
+	box-shadow: 0 0 1px 3px #a0a0a0;
+}
+
+button.rec-dot_active {
+	background-color: #ff277e;
+	box-shadow: 0 0 1px 3px #333;
+}
+
+button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+	box-shadow: 0 0 1px 2px rgb(10, 255, 1);
+}
+
+/* square buttons */
+.rec.rec-arrow {
+    border-radius: 0;
+    background-color: #ff277d44;
+}
+
+/* round buttons on hover */
+.rec.rec-arrow:hover {
+    border-radius: 50%;
+}
+/* hide disabled buttons */
+.rec.rec-arrow:disabled {
+    visibility: hidden;
+}
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 1px lightgrey;
+}
+
+.cGKbZh:hover:enabled, .cGKbZh:focus:enabled {
+    background-color: #ff277e !important;
+}
