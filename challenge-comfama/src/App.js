@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import './App.css';
+import './App.css'
+import { HashRouter } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Header from './components/Header'
 import Search from './components/Search'
@@ -69,28 +70,30 @@ function App() {
   }, [search])
 
   return (
-    <CssBaseline>
-      <div className="App">
-        <Header />
-        <main className="App-main">
-          <Search
-            search={search}
-            setSearch={setSearch}
-            setMyResponse={setMyResponse}
-            setError={setError}/>
-          {
-            (!search.request)
-              ? (error
-                  ? <Error search={search} />
-                  : <Message />
-                )
-              : (myResponse.length === 0)
-                ? <Loader />
-                : <Cards listAnime={myResponse}/>
-          }
-        </main>
-      </div>
-    </CssBaseline>
+    <HashRouter basename="/">
+      <CssBaseline>
+        <div className="App">
+          <Header />
+          <main className="App-main">
+            <Search
+              search={search}
+              setSearch={setSearch}
+              setMyResponse={setMyResponse}
+              setError={setError}/>
+            {
+              (!search.request)
+                ? (error
+                    ? <Error search={search} />
+                    : <Message />
+                  )
+                : (myResponse.length === 0)
+                  ? <Loader />
+                  : <Cards listAnime={myResponse}/>
+            }
+          </main>
+        </div>
+      </CssBaseline>
+    </HashRouter>
   );
 }
 

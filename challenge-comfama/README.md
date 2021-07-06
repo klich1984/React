@@ -1,3 +1,10 @@
+Application that looks for animes from the api api.jikan.moe/ and shows you the answers on cards
+
+You can try it in the following urls
+
+https://challenguecomfama.netlify.app/
+https://klich1984.github.io/React/#/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
