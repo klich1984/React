@@ -20,7 +20,6 @@ function ClearSearch({ setSearch, setMyResponse }) {
   const clasess = useStyles()
   // search reset
   const handleReset = () => {
-    // alert("reseteando")
     setSearch({
       anime: '',
       request: false

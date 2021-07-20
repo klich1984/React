@@ -8,6 +8,7 @@ import Error from './components/Error'
 import Message from './components/Message'
 import Cards from './components/cards/Cards'
 import Loader from './components/Loader'
+import calcStoreTotal from './helpers/calcStoreTotal'
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     anime: '',
     request: false
   },
-  myResponseInit = []
+  myResponseInit = [],
+  totalStore = 0
 
   // State variables
   const [search, setSearch] = useState(searchInit)
@@ -47,6 +49,7 @@ function App() {
             url: anime.url
           }
           newListAnime.push(animes)
+          totalStore = calcStoreTotal(animeJSON.results)
         })
         setMyResponse(newListAnime)
 

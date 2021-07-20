@@ -6,7 +6,7 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import calcStore from '../helpers/calcStore'
+import selectScoreRange from '../helpers/selectScoreRange'
 
 const useStyles = makeStyles({
   root: {
@@ -30,12 +30,12 @@ const useStyles = makeStyles({
 })
 
 function MediaCard({
-  title,
-  score,
-  image_url,
-  synopsis,
-  url
-}) {
+                    title,
+                    score,
+                    image_url,
+                    synopsis,
+                    url
+                  }) {
   const classes = useStyles();
 
   return (
@@ -56,7 +56,7 @@ function MediaCard({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.addBtn}>
-        {calcStore(score)}
+        {selectScoreRange(score)}
       </CardActions>
     </Card>
   )

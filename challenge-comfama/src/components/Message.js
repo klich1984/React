@@ -7,6 +7,7 @@ const useStyles = makeStyles({
   text: {
       display: "flex",
       justifyContent: "center",
+      textAlign: "center"
   }
 })
 

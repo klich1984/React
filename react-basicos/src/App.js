@@ -12,6 +12,7 @@ import Api from './components/api/Api'
 import ContadorHooks from './components/contador/ContadorHooks'
 import RelojHooks from './components/reloj/RelojHooks'
 import ApiHooks from './components/api/ApiHooks';
+import SpacingGrid from './components/response/SpacingGrid';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -82,6 +83,12 @@ function App() {
           <br />
           <button onClick={() => setReloj(!reloj)}>{reloj ? "ocultar relojes" : "Mostrar relojes"}</button>
           <ApiHooks />
+          <br />
+          <hr />
+        </section>
+        <section>
+          <h2>Spacing Grid</h2>
+            <SpacingGrid />
         </section>
       </header>
     </div>

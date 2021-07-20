@@ -1,7 +1,7 @@
-import logo from '../logoComfama.svg'
+import logo from '../assets/logoComfama.svg'
 
 
-export const Header = () => {
+function Header () {
   return (
     <header className="App-header">
       <a href="https://www.comfama.com/" target="_blank">
@@ -11,7 +11,6 @@ export const Header = () => {
       <a href="https://www.comfama.com/" target="_blank">
         <img src={logo} className="App-logo" alt="logo" />
       </a>
-
     </header>
   )
 }

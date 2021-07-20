@@ -9,9 +9,11 @@ import Cancion from './pages/Cancion'
 import Buscador from './components/Buscador'
 import Letra from './components/Letra'
 import ListaCanciones from './components/ListaCanciones'
+import Carousel from 'react-elastic-carousel';
 import Loader from './components/Loader'
 import Alert from '@material-ui/lab/Alert'
 import AlertTitle from '@material-ui/lab/AlertTitle'
+
 
 
 
@@ -115,7 +117,9 @@ function App() {
                             </ul>
                           </Alert>
                         )
-                        : (<ListaCanciones mySongs={mySongs} setMySongs={setMySongs}/>)
+                        :(<ListaCanciones
+                          mySongs={mySongs}
+                          setMySongs={setMySongs}/>)
                       )
                       // Si el objeto current Songs esta vacio (No tiene propiedades) para evitar que se cargue al DOM el componente vacio ya que recibe parametros de la peticion
                     : Object.keys(currentSong).length === 0

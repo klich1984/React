@@ -13,6 +13,8 @@
 .App-header {
   background-color: #fff;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   max-height: 100%;
   max-width: 100%;
   min-height: 70px;
@@ -31,15 +33,18 @@
   color: #292929;
 }
 
-/* .App-link {
-  color: #61dafb;
-} */
+@media (max-width: 576px) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+  }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .App-header>a:nth-child(3) {
+    padding: 0 3%;
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header>a:nth-child(1) {
+    padding-top: 3%;
   }
-} */
+}

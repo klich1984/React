@@ -1,4 +1,4 @@
-const calcStore = function (score) {
+const selectScoreRange = function (score) {
   if (score >= 1 && score < 5) {
     return <h3>I do not recommend it</h3>
   } else if (score >= 5 && score < 8) {
@@ -10,4 +10,4 @@ const calcStore = function (score) {
   }
 }
 
-export default calcStore
+export default selectScoreRange

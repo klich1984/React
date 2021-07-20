@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   form: {
+    display: "flex",
     paddingLeft: "47px"
   }
 }))
@@ -28,7 +29,6 @@ const Search = ({search, setSearch, setMyResponse, setError}) => {
 
   // Form handling
   const handleSubmit = (e) => {
-    // console.log(e.target.anime.value)
     e.preventDefault()
 
     setSearch({
@@ -36,10 +36,7 @@ const Search = ({search, setSearch, setMyResponse, setError}) => {
       request: true
     })
 
-      setError(false)
-    // setTimeout(() => {
-    //   handleReset()
-    // }, 3000);
+    setError(false)
   }
 
   // the value attribute to have a controlled form

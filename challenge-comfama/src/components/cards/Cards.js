@@ -28,7 +28,6 @@ function Cards({ listAnime }) {
   return (
     <>
       <div className={clasess.root} color="primary">
-
         <Carousel breakPoints={breackPoint}>
           {
             listAnime.map(card => (
