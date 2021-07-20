@@ -1,6 +1,6 @@
 # REACT
 
-En este proyecto se aplicaron los conceptos Basicos de REACT y se utilizaron las siguientes librerias
+Aprendidendo los conceptos basicos de REACTs
 
 # Getting Started with Create React App
 
