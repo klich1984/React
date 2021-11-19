@@ -1,5 +1,28 @@
 # Validacion de formularios con REACT
 
+Application in React for the validation of forms and the reuse of a component.
+
+Using:
+ - Regular expressions
+ - FontAwesome for React => [Link](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
+ - Google fonts => [link](https://fonts.google.com/)
+ - Styled Components => [Link](https://fonts.google.com/)
+
+The form is not processed, it simply verifies that all the fields are filled in correctly and shows success or error alerts.
+
+---
+## Views
+
+![View 1](./src/assets/img/formValidation1.png)
+
+---
+
+![View 2](./src/assets/img/formValidation2.png)
+
+---
+
+![View 3](./src/assets/img/formValidation3.png)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
