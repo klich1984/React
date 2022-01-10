@@ -1,4 +1,4 @@
-import logo from '../assets/logoComfama.svg'
+import logo from '../assets/logo.svg'
 
 
 function Header () {

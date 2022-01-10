@@ -13,6 +13,11 @@ import ContadorHooks from './components/contador/ContadorHooks'
 import RelojHooks from './components/reloj/RelojHooks'
 import ApiHooks from './components/api/ApiHooks';
 import SpacingGrid from './components/response/SpacingGrid';
+import Application from './components/GuiaTelefonica/GuiaTelefonica';
+import Application2 from './components/GuiaTelefonica/Coderbyte';
+import Home from "./components/UseContext/Home";
+import About from "./components/UseContext/About";
+import ThemeContext from './context/ContextoGeneral';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -91,6 +96,15 @@ function App() {
             <SpacingGrid />
         </section>
       </header>
+
+      <Application />
+      <Application2 />
+      <section className='container'>
+            <ThemeContext>
+              <Home></Home>
+              <About></About>
+            </ThemeContext>
+      </section>
     </div>
   );
 }
