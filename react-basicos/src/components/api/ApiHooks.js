@@ -33,22 +33,34 @@ const ApiHooks = () => {
 		let url = 'https://pokeapi.co/api/v2/pokemon'
 
 		const getPokemons = async (url) => {
-			let res = await fetch(url),
-				json = await res.json()
+			try {
+				let res = await fetch(url)
 
-			json.results.forEach(async (el) => {
-				let res = await fetch(el.url),
-					json = await res.json()
-
-				console.log(json)
-				let pokemon = {
-					id: json.id * -1,
-					name: json.name,
-					avatar: json.sprites.front_default,
+				if (!res.ok) {
+					// eslint-disable-next-line no-throw-literal
+					throw {
+						err: true,
+						status: res.status,
+						statusText: !res.statusText ? 'Ocurrio un error' : res.statusText,
+					}
 				}
+				let json = await res.json()
+				json.results.forEach(async (el) => {
+					let res = await fetch(el.url),
+						json = await res.json()
 
-				setPokemons((pokemons) => [...pokemons, pokemon])
-			})
+					console.log(json)
+					let pokemon = {
+						id: json.id * -1,
+						name: json.name,
+						avatar: json.sprites.front_default,
+					}
+
+					setPokemons((pokemons) => [...pokemons, pokemon])
+				})
+			} catch (error) {
+        console.log(error)
+      }
 		}
 
 		getPokemons(url)
