@@ -18,6 +18,7 @@ import Application2 from './components/GuiaTelefonica/Coderbyte';
 import Home from "./components/UseContext/Home";
 import About from "./components/UseContext/About";
 import ThemeContext from './context/ContextoGeneral';
+import HooksPersonalizados from './components/customHooks/HooksPersonalizados';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -90,21 +91,11 @@ function App() {
           <ApiHooks />
           <br />
           <hr />
-        </section>
-        <section>
-          <h2>Spacing Grid</h2>
-            <SpacingGrid />
+          <HooksPersonalizados />
+          <hr />
         </section>
       </header>
 
-      <Application />
-      <Application2 />
-      <section className='container'>
-            <ThemeContext>
-              <Home></Home>
-              <About></About>
-            </ThemeContext>
-      </section>
     </div>
   );
 }
