@@ -12,13 +12,20 @@ import Api from './components/api/Api'
 import ContadorHooks from './components/contador/ContadorHooks'
 import RelojHooks from './components/reloj/RelojHooks'
 import ApiHooks from './components/api/ApiHooks';
+// eslint-disable-next-line no-unused-vars
 import SpacingGrid from './components/response/SpacingGrid';
+// eslint-disable-next-line no-unused-vars
 import Application from './components/GuiaTelefonica/GuiaTelefonica';
+// eslint-disable-next-line no-unused-vars
 import Application2 from './components/GuiaTelefonica/Coderbyte';
+// eslint-disable-next-line no-unused-vars
 import Home from "./components/UseContext/Home";
+// eslint-disable-next-line no-unused-vars
 import About from "./components/UseContext/About";
+// eslint-disable-next-line no-unused-vars
 import ThemeContext from './context/ContextoGeneral';
 import HooksPersonalizados from './components/customHooks/HooksPersonalizados';
+import AjaxHooks from './components/ajax/AjaxHooks';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -93,6 +100,7 @@ function App() {
           <hr />
           <HooksPersonalizados />
           <hr />
+          <AjaxHooks />
         </section>
       </header>
 
