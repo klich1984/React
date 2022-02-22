@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+// Es una funcion que usaremos dentro del hook
+
 export const useFetch = (url) => {
 	const [data, setData] = useState(null)
 	const [isPending, setIsPending] = useState(true)
@@ -34,5 +36,6 @@ export const useFetch = (url) => {
 		getData(url)
 	}, [url])
 
+	// Lo que retorna el hook personalizado.
 	return { data, isPending, error }
 }
