@@ -26,6 +26,7 @@ import About from "./components/UseContext/About";
 import ThemeContext from './context/ContextoGeneral';
 import HooksPersonalizados from './components/customHooks/HooksPersonalizados';
 import AjaxHooks from './components/ajax/AjaxHooks';
+import Referencias from './components/referencias/Referencias';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -101,6 +102,8 @@ function App() {
           <HooksPersonalizados />
           <hr />
           <AjaxHooks />
+          <hr />
+          <Referencias />
         </section>
       </header>
 
