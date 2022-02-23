@@ -27,6 +27,7 @@ import ThemeContext from './context/ContextoGeneral';
 import HooksPersonalizados from './components/customHooks/HooksPersonalizados';
 import AjaxHooks from './components/ajax/AjaxHooks';
 import Referencias from './components/referencias/Referencias';
+import Formularios from './components/formularios/Formularios';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -104,6 +105,8 @@ function App() {
           <AjaxHooks />
           <hr />
           <Referencias />
+          <hr />
+          <Formularios />
         </section>
       </header>
 
