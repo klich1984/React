@@ -28,6 +28,7 @@ import HooksPersonalizados from './components/customHooks/HooksPersonalizados';
 import AjaxHooks from './components/ajax/AjaxHooks';
 import Referencias from './components/referencias/Referencias';
 import Formularios from './components/formularios/Formularios';
+import Estilos from './components/estilos/Estilos';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -107,6 +108,8 @@ function App() {
           <Referencias />
           <hr />
           <Formularios />
+          <br />
+          <Estilos />
         </section>
       </header>
 

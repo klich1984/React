@@ -16,11 +16,11 @@ const HooksPersonalizados = () => {
 				<mark>{JSON.stringify(error)}</mark>
 			</h3>
 			<h3>
-				<pre style={{ whiteSpace: "pre-wrap" }}>
+				{/* <pre style={{ whiteSpace: "pre-wrap" }}>
 					<code>
 						{JSON.stringify(data)}
 					</code>
-				</pre>
+				</pre> */}
 			</h3>
 		</div>
 	)
