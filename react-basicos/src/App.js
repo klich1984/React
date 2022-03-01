@@ -29,6 +29,7 @@ import AjaxHooks from './components/ajax/AjaxHooks';
 import Referencias from './components/referencias/Referencias';
 import Formularios from './components/formularios/Formularios';
 import Estilos from './components/estilos/Estilos';
+import ComponentesEstilizados from './components/componentesEstilizados/ComponentesEstilizados';
 
 function App() {
   const [reloj, setReloj] = useState(true)
@@ -110,6 +111,8 @@ function App() {
           <Formularios />
           <br />
           <Estilos />
+          <hr />
+          <ComponentesEstilizados />
         </section>
       </header>
 
