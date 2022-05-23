@@ -4,12 +4,14 @@ import Acerca from '../pages/Acerca'
 import Contacto from '../pages/Contacto'
 import Error404 from '../pages/Error404'
 import Home from '../pages/Home'
+import MenuConceptos from './MenuConceptos'
 
 const ConceptosBasicos = () => {
   return (
     <div>
       <h2>Conceptos Básicos</h2>
       <Router>
+        <MenuConceptos />
         {/* Routes es el remplazo del componente Switch */}
         <Routes>
           <Route path='/' element={<Home />} />
