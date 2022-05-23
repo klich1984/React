@@ -1,7 +1,7 @@
 // Se recomienda usar el alias ya que es casi un estandar
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Acerca from './Acerca'
-import Contacto from './Contacto'
+import Acerca from '../pages/Acerca'
+import Contacto from '../pages/Contacto'
 import Home from './Home'
 
 const ConceptosBasicos = () => {
@@ -9,6 +9,7 @@ const ConceptosBasicos = () => {
     <div>
       <h2>Conceptos Básicos</h2>
       <Router>
+        {/* Routes es el remplazo del componente Switch */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='acerca' element={<Acerca />} />
