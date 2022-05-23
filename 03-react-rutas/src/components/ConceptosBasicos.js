@@ -2,7 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Acerca from '../pages/Acerca'
 import Contacto from '../pages/Contacto'
-import Home from './Home'
+import Error404 from '../pages/Error404'
+import Home from '../pages/Home'
 
 const ConceptosBasicos = () => {
   return (
@@ -14,6 +15,7 @@ const ConceptosBasicos = () => {
           <Route path='/' element={<Home />} />
           <Route path='acerca' element={<Acerca />} />
           <Route path='contacto' element={<Contacto />} />
+          <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>
     </div>
