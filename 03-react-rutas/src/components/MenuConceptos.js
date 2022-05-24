@@ -1,6 +1,12 @@
 import { Link, NavLink } from 'react-router-dom'
 
 const MenuConceptos = () => {
+  let activeStyle = {
+    textDecoration: 'underline',
+  }
+
+  let activeClassName = 'underline'
+
   return (
     <nav>
       <ol>
@@ -20,20 +26,39 @@ const MenuConceptos = () => {
         <li>
           {/* La diferencia entre Link y Navlink es que el NavLink le puedo pasar una clase para saber que link esta activo */}
           <span>Componente NavLink: </span>
-          <NavLink to='/' activeClassName='active'>
+          <NavLink
+            to='/'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Home
           </NavLink>
-          <NavLink to='acerca' activeClassName='active'>
+          <NavLink
+            to='acerca'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Acerca
           </NavLink>
-          <NavLink to='contacto' activeClassName='active'>
+          <NavLink
+            to='contacto'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Contacto
           </NavLink>
         </li>
         <li>
           <span>Párametros: </span>
-          <Link to='usuario/carlos'>Carlos</Link>
-          <Link to='usuario/erica'>Erica</Link>
+          <NavLink
+            to='usuario/carlos'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Carlos
+          </NavLink>
+          <NavLink
+            to='usuario/erica'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Erica
+          </NavLink>
         </li>
       </ol>
     </nav>
