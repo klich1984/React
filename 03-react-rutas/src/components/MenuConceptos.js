@@ -5,7 +5,7 @@ const MenuConceptos = () => {
     textDecoration: 'underline',
   }
 
-  let activeClassName = 'underline'
+  // let activeClassName = 'underline'
 
   return (
     <nav>
@@ -59,6 +59,10 @@ const MenuConceptos = () => {
           >
             Erica
           </NavLink>
+        </li>
+        <li>
+          <span>Parámetros de Consulta: </span>
+          <Link to='/productos'>Productos</Link>
         </li>
       </ol>
     </nav>
