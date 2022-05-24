@@ -30,6 +30,11 @@ const MenuConceptos = () => {
             Contacto
           </NavLink>
         </li>
+        <li>
+          <span>Párametros: </span>
+          <Link to='usuario/carlos'>Carlos</Link>
+          <Link to='usuario/erica'>Erica</Link>
+        </li>
       </ol>
     </nav>
   )
