@@ -10,6 +10,7 @@ import Contacto from '../pages/Contacto'
 import Error404 from '../pages/Error404'
 import Home from '../pages/Home'
 import Productos from '../pages/Productos'
+import ReactTopics from '../pages/ReactTopics'
 import Usuario from '../pages/Usuario'
 import MenuConceptos from './MenuConceptos'
 
@@ -45,6 +46,7 @@ const ConceptosBasicos = () => {
               </>
             }
           />
+          <Route path='/react/*' element={<ReactTopics />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>
