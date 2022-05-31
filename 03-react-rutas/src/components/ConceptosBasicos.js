@@ -7,12 +7,15 @@ import {
 } from 'react-router-dom'
 import Acerca from '../pages/Acerca'
 import Contacto from '../pages/Contacto'
+import Daschboard from '../pages/Daschboard'
 import Error404 from '../pages/Error404'
 import Home from '../pages/Home'
+import Login from '../pages/Login'
 import Productos from '../pages/Productos'
 import ReactTopics from '../pages/ReactTopics'
 import Usuario from '../pages/Usuario'
 import MenuConceptos from './MenuConceptos'
+import PrivateRoute from './PrivateRoute'
 
 const ConceptosBasicos = () => {
   return (
@@ -47,6 +50,9 @@ const ConceptosBasicos = () => {
             }
           />
           <Route path='/react/*' element={<ReactTopics />} />
+          <Route path='/login' element={<Login />} />
+          {/* <Route path='/dashboard' element={<Daschboard />} /> */}
+          <Route path='/dashboard' element={<PrivateRoute />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>
