@@ -1,4 +1,6 @@
 import ConceptosBasicos from './components/ConceptosBasicos'
+import CrudApi from './components/CrudApi'
+import SongSearch from './components/SongSearch'
 
 /* eslint-disable jsx-a11y/anchor-has-content */
 function App() {
@@ -12,6 +14,10 @@ function App() {
       >
         Documentación
       </a>
+      <hr />
+      <CrudApi />
+      <hr />
+      <SongSearch />
       <hr />
       <ConceptosBasicos />
     </div>
