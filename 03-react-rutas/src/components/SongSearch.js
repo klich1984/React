@@ -27,7 +27,7 @@ const SongSearch = () => {
         helpHttp().get(songUrl),
       ])
 
-      // console.log(artistRes, songRes)
+      console.log(artistRes, songRes)
       setBio(artistRes)
       setLyric(songRes)
       setLoading(false)
@@ -44,7 +44,7 @@ const SongSearch = () => {
   return (
     <div>
       <h2>SongSearch</h2>
-      <article className="grid-1-3">
+      <article className='grid-1-3'>
         <SongForm handleSearch={handleSearch} />
         {loading && <Loader />}
         {search && !loading && (
