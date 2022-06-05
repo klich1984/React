@@ -113,7 +113,7 @@ const CrudApi = () => {
 
   return (
     <div>
-      <HashRouter basename='santos'>
+      <HashRouter>
         <header>
           <h2>CRUD API con Rutas</h2>
           <nav>
@@ -131,36 +131,55 @@ const CrudApi = () => {
             </NavLink>
           </nav>
         </header>
-        <Routes>
-          <Route path='/' element={<h2>Home Santos</h2>} />
-          <Route path='/agregar' element={<h2>Agregar Santo</h2>} />
-          <Route path='/editar/:id' element={<h2>Editar Santo</h2>} />
+        <Routes basename='santos/'>
+          <Route
+            path='/'
+            element={
+              <div>
+                <h2>Home Santos</h2>
+                {loading && <Loader />}
+                {error && (
+                  <Message
+                    msg={`Error ${error.status}: ${error.statusText}`}
+                    bgColor='#dc3545'
+                  />
+                )}
+                {db && (
+                  <CrudTable
+                    data={db}
+                    setDataToEdit={setDataToEdit}
+                    deleteData={deleteData}
+                  />
+                )}
+              </div>
+            }
+          />
+          <Route
+            path='/agregar'
+            element={
+              <CrudForm
+                createData={createData}
+                updateData={updateData}
+                dataToEdit={dataToEdit}
+                setDataToEdit={setDataToEdit}
+              />
+            }
+          />
+          <Route
+            path='/editar/:id'
+            element={
+              <CrudForm
+                createData={createData}
+                updateData={updateData}
+                dataToEdit={dataToEdit}
+                setDataToEdit={setDataToEdit}
+              />
+            }
+          />
           <Route path='/*' element={<Error404 />} />
         </Routes>
       </HashRouter>
       <h2>CRUD APP</h2>
-      <article className='grid-1-2'>
-        <CrudForm
-          createData={createData}
-          updateData={updateData}
-          dataToEdit={dataToEdit}
-          setDataToEdit={setDataToEdit}
-        />
-        {loading && <Loader />}
-        {error && (
-          <Message
-            msg={`Error ${error.status}: ${error.statusText}`}
-            bgColor='#dc3545'
-          />
-        )}
-        {db && (
-          <CrudTable
-            data={db}
-            setDataToEdit={setDataToEdit}
-            deleteData={deleteData}
-          />
-        )}
-      </article>
     </div>
   )
 }
