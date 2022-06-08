@@ -45,14 +45,14 @@ const SongSearch = () => {
 
   return (
     <div>
-      <HashRouter>
+      <HashRouter basename='canciones'>
         <header>
           <h2>Song Search</h2>
           <Link to='/'>Home</Link>
         </header>
         {loading && <Loader />}
         <article className='grid-1-3'>
-          <Routes basename='canciones'>
+          <Routes>
             <Route
               path='/'
               element={
