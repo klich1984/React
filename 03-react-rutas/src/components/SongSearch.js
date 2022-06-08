@@ -6,12 +6,15 @@ import Loader from './Loader'
 import SongDetails from './SongDetails'
 import SongForm from './SongForm'
 
+let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [] // Leer del Local Storage
+
 const SongSearch = () => {
   // Variables de estado
   const [search, setSearch] = useState(null)
   const [lyric, setLyric] = useState(null)
   const [bio, setBio] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [mySongs, setMySongs] = useState(mySongsInit) // Variable del Local Store
 
   useEffect(() => {
     if (search === null) return
@@ -36,12 +39,20 @@ const SongSearch = () => {
     }
 
     fetchData()
-  }, [search])
+
+    // Establecer la data en el localstorage
+    localStorage.setItem('mySongs', JSON.stringify(mySongs))
+  }, [search, mySongs])
 
   const handleSearch = (data) => {
     // console.log(data)
     setSearch(data)
   }
+
+  const handleSaveSong = () => {
+    alert('Guardando canción en favoritos')
+  }
+  const handleDeleteSong = (id) => {}
 
   return (
     <div>
@@ -57,7 +68,10 @@ const SongSearch = () => {
               path='/'
               element={
                 <>
-                  <SongForm handleSearch={handleSearch} />
+                  <SongForm
+                    handleSearch={handleSearch}
+                    handleSaveSong={handleSaveSong}
+                  />
                   <h2>Tabla de Canciones</h2>
                   {search && !loading && (
                     <SongDetails search={search} lyric={lyric} bio={bio} />
