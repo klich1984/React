@@ -24,7 +24,7 @@ export const helpHttp = () => {
     // Activar el abort Controller
     setTimeout(() => {
       controller.abort()
-    }, 3000)
+    }, 15000)
 
     // Peticion Fetch
     return fetch(endpoint, options)
@@ -35,7 +35,7 @@ export const helpHttp = () => {
               err: true,
               status: res.status || '00',
               statusText: res.statusText || 'Ocurrio un error',
-          })
+            })
       )
       .catch((err) => err)
   }
