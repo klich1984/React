@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { HashRouter, Link, Route, Routes } from 'react-router-dom'
 import { helpHttp } from '../helpers/helpHttp'
 import Error404 from '../pages/Error404'
+import SongPage from '../pages/SongPage'
 import Loader from './Loader'
 import SongDetails from './SongDetails'
 import SongForm from './SongForm'
@@ -33,7 +34,7 @@ const SongSearch = () => {
         helpHttp().get(songUrl),
       ])
 
-      console.log(artistRes, songRes)
+      // console.log(artistRes, songRes)
       setBio(artistRes)
       setLyric(songRes)
       setLoading(false)
@@ -51,10 +52,28 @@ const SongSearch = () => {
   }
 
   const handleSaveSong = () => {
-    alert('Guardando canción en favoritos')
+    // alert('Guardando canción en favoritos')
+    let currentSong = {
+      search,
+      lyric,
+      bio,
+    }
+    // Lo que ya tiene la variable mySong con currentSong
+    setMySongs((mySong) => [...mySong, currentSong])
+    setSearch(null)
   }
   const handleDeleteSong = (id) => {
-    alert(`Eliminando el id: ${id}`)
+    // alert(`Eliminando el id: ${id}`)
+    let isDelete = window.confirm(
+      `estas seguro de eliminar la canción con el id: "${id}"`
+    )
+
+    if (isDelete) {
+      // Cuando el index sea diferente del id, lo va a agregar a my song
+      let songs = mySongs.filter((el, index) => index !== id)
+      setMySongs(songs)
+      localStorage.setItem('mySongs', JSON.stringify(songs))
+    }
   }
 
   return (
@@ -85,7 +104,7 @@ const SongSearch = () => {
                 </>
               }
             />
-            <Route path='/canciones/:id' element={<h2>Pagina de cancion</h2>} />
+            <Route path='/:id' element={<SongPage mySongs={mySongs} />} />
             <Route path='/*' element={<Error404 />} />
           </Routes>
         </article>
