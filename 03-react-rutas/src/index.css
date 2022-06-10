@@ -62,7 +62,7 @@ input[type='reset'] {
   vertical-align: middle;
   cursor: pointer;
 }
-
+/* button desabilitado */
 input[type='button']:disabled {
   border-color: rgba(118, 118, 118, 0.3);
   color: rgba(16, 16, 16, 0.3);
