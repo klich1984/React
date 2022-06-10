@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 const SongTableRow = ({ el, id, handleDeleteSong }) => {
-  console.log(el)
+  // console.log(el)
   let { bio, search } = el
   let avatar = bio.artists[0].strArtistThumb
 

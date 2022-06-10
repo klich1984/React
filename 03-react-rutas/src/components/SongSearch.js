@@ -58,9 +58,12 @@ const SongSearch = () => {
       lyric,
       bio,
     }
+
+    let songs = [...mySongs, currentSong]
     // Lo que ya tiene la variable mySong con currentSong
-    setMySongs((mySong) => [...mySong, currentSong])
+    setMySongs(songs)
     setSearch(null)
+    localStorage.setItem('mySongs', JSON.stringify(songs))
   }
   const handleDeleteSong = (id) => {
     // alert(`Eliminando el id: ${id}`)

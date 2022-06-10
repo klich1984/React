@@ -3,7 +3,7 @@ import SongDetails from '../components/SongDetails'
 
 const SongPage = ({ mySongs }) => {
   let { id } = useParams()
-  console.log('id', id, 'mySongs', mySongs, 'mySongs[id]', mySongs[id])
+  // console.log('id', id, 'mySongs', mySongs, 'mySongs[id]', mySongs[id])
   let currentSong = mySongs[id]
   let { search, lyric, bio } = currentSong
 
