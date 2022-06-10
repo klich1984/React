@@ -113,7 +113,7 @@ const CrudApi = () => {
 
   return (
     <div>
-      <HashRouter>
+      <HashRouter basename='santos/'>
         <header>
           <h2>CRUD API con Rutas</h2>
           <nav>
@@ -131,7 +131,7 @@ const CrudApi = () => {
             </NavLink>
           </nav>
         </header>
-        <Routes basename='santos/'>
+        <Routes>
           <Route
             path='/'
             element={
