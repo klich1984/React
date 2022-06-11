@@ -7,13 +7,15 @@ function App() {
       <h1>Memorización con React</h1>
       <hr />
       <h2>Teoria</h2>
-      <a
-        href='https://es.reactjs.org/docs/react-api.html#reactmemo'
-        target='_blank'
-        rel='noreferrer'
-      >
-        memo
-      </a>
+      <h3>
+        <a
+          href='https://es.reactjs.org/docs/react-api.html#reactmemo'
+          target='_blank'
+          rel='noreferrer'
+        >
+          memo
+        </a>
+      </h3>
       <ul>
         <li>Se encarga de memorizar un componente,</li>
         <li>
@@ -32,6 +34,27 @@ function App() {
             <li>Un componente se vuelve muy pesado.</li>
             <li>Salen alertas de rendimiento en la consola.</li>
           </ul>
+        </li>
+      </ul>
+      <h3>
+        <a
+          href='https://es.reactjs.org/docs/hooks-reference.html#usecallback'
+          target='_blank'
+          rel='noreferrer'
+        >
+          useCallback
+        </a>
+      </h3>
+      <ul>
+        <li>
+          Memoriza una función, para no volverla a definir en cada render.
+        </li>
+        <li>
+          Úsalo siempre que se pase una función como <b>prop</b> a un componente
+          memorizado.
+        </li>
+        <li>
+          Úsalo siempre que se pase una función como parámetro de un efecto.
         </li>
       </ul>
       <hr />
