@@ -5,6 +5,7 @@ import Main from './Main'
 
 const initialTheme = 'light'
 const initialLanguage = 'es'
+const initialAuth = null
 
 const translation = {
   es: {
@@ -38,6 +39,7 @@ const MyPage = () => {
   const [language, setLanguage] = useState(initialLanguage)
   // Select the language with the language state variable
   const [texts, setTexts] = useState(translation[language])
+  const [auth, setAuth] = useState(initialAuth)
 
   // console.log(texts)
 
@@ -50,7 +52,7 @@ const MyPage = () => {
       setTheme('dark')
     }
   }
-
+  // Language change handling
   const handleLanguage = (e) => {
     if (e.target.value === 'es') {
       setLanguage('es')
@@ -60,16 +62,26 @@ const MyPage = () => {
       setTexts(translation.en)
     }
   }
+  // Sesion change handling
+  const handleAuth = (e) => {
+    if (auth) {
+      setAuth(null)
+    } else {
+      setAuth(true)
+    }
+  }
 
   return (
     <div className='my-page'>
       <Header
         theme={theme}
         texts={texts}
+        auth={auth}
         handleTheme={handleTheme}
         handleLanguage={handleLanguage}
+        handleAuth={handleAuth}
       />
-      <Main theme={theme} texts={texts} />
+      <Main theme={theme} texts={texts} auth={auth} />
       <Footer theme={theme} texts={texts} />
     </div>
   )
