@@ -8,8 +8,9 @@
 1. Crear una carpeta dentro de src que se llama context
 2. Dentro de esa carpeta se crearan los contextos que se requieran en la app
 3. Creamos el contexto con la funcion `createContext()`, Se suguiere que el nombre sea adecuado ej. `const ThemeContext = createContext()` y este se exporta de manera por defecto.
-4. Crear un componente que sera el proveedor(wrapper) y que recibira como propiedad a `{children}`, que sera el que va a compartir con sus componentes hijos, este componente se encargara de realizar toda la logica, este componente se exporta de manera normal.
-5. El componentecreado anteriormente returnara un componente de react que retorna el `Provider` ej. `ThemeContext.Provider` y gracias a los hooks no se necesita el `Consumer`. Le pasamos los `{childrens}` y le compartimos las propiedades que se requieran en los hijos como un objeto para que seam destructurados.abs
+4. Crear un componente que sera el proveedor(wrapper) y que recibira como propiedad a `{children}`, que sera el que va a compartir con sus componentes hijos, este componente se encargara de realizar toda la logica, este componente se exporta de manera normal ej.: `const ThemeProvider = ({ children }) => {}`.
+5. El componente creado anteriormente retornara un componente de react que retorna el `Provider` ej. `ThemeContext.Provider` y gracias a los hooks no se necesita el `Consumer`. Le pasamos los `{childrens}` y le compartimos las propiedades que se requieran en los hijos como un objeto para que seam destructurados.
+6. En el componente donde se usara las propiedades del contexto se usara el Hook `useContext` y le pasaremos el contexto creado el cual debe ser tambien importado.
 
 ---
 
