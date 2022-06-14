@@ -1,3 +1,8 @@
+# Funcionalidad
+
+- pagina con cabeza cuerpo y pie y que cambiaentre modo claro y oscuro
+- Manejar de sesión para mostrar un contenido o otro depende de si esta logeado o no y que sea multiidioma (es/en)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
