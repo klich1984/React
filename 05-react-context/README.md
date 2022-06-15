@@ -12,6 +12,8 @@
 5. El componente creado anteriormente retornara un componente de react que retorna el `Provider` ej. `ThemeContext.Provider` y gracias a los hooks no se necesita el `Consumer`. Le pasamos los `{childrens}` y le compartimos las propiedades que se requieran en los hijos como un objeto para que seam destructurados.
 6. En el componente donde se usara las propiedades del contexto se usara el Hook `useContext` y le pasaremos el contexto creado el cual debe ser tambien importado.
 
+El provider no puede ir en el archivo donde consumamos el contexto
+
 ---
 
 # Getting Started with Create React App
