@@ -1,15 +1,12 @@
-import { useState } from 'react'
-import Footer from './Footer'
-import Header from './Header'
-import Main from './Main'
+import { createContext, useState } from 'react'
 
-const initialTheme = 'light'
+const LanguageContext = createContext()
+
 const initialLanguage = 'es'
-const initialAuth = null
 
 const translation = {
   es: {
-    headerTitle: 'Mi aplicación SIN Context API',
+    headerTitle: 'Mi aplicación CON Context API',
     headerSubtitle: 'Mi cabecera',
     headerLight: 'Claro',
     headerDark: 'Oscuro',
@@ -21,7 +18,7 @@ const translation = {
     footerTitle: 'Mi pié de página',
   },
   en: {
-    headerTitle: 'My application without Context API',
+    headerTitle: 'My application with Context API',
     headerSubtitle: 'My header',
     headerLight: 'Light',
     headerDark: 'Dark',
@@ -34,24 +31,12 @@ const translation = {
   },
 }
 
-const MyPage = () => {
-  const [theme, setTheme] = useState(initialTheme)
+const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(initialLanguage)
   // Select the language with the language state variable
   const [texts, setTexts] = useState(translation[language])
-  const [auth, setAuth] = useState(initialAuth)
-
   // console.log(texts)
 
-  // theme change handling
-  const handleTheme = (e) => {
-    // console.log(e.target.value)
-    if (e.target.value === 'light') {
-      setTheme('light')
-    } else {
-      setTheme('dark')
-    }
-  }
   // Language change handling
   const handleLanguage = (e) => {
     if (e.target.value === 'es') {
@@ -62,29 +47,13 @@ const MyPage = () => {
       setTexts(translation.en)
     }
   }
-  // Sesion change handling
-  const handleAuth = (e) => {
-    if (auth) {
-      setAuth(null)
-    } else {
-      setAuth(true)
-    }
-  }
+
+  const data = { texts, handleLanguage }
 
   return (
-    <div className='my-page'>
-      <Header
-        theme={theme}
-        texts={texts}
-        auth={auth}
-        handleTheme={handleTheme}
-        handleLanguage={handleLanguage}
-        handleAuth={handleAuth}
-      />
-      <Main theme={theme} texts={texts} auth={auth} />
-      <Footer theme={theme} texts={texts} />
-    </div>
+    <LanguageContext.Provider value={data}>{children}</LanguageContext.Provider>
   )
 }
 
-export default MyPage
+export { LanguageProvider }
+export default LanguageContext
