@@ -2,6 +2,23 @@
 
 Notas
 
+Es una función pura que nos permite manejar el estado, por lo que no tendra efectos secundarios ni interna ni externamente.
+
+const [state, dispatch] = useReducer(first, second, third)
+
+- Destructuramos
+  - state: es la variable de estado, se suguiere que sea un estado
+  - dispatch: la funcion que disparar la actualizacion
+- Recibe
+  - reducer: funcion reductora creada previamente fuera del componente o en la carpeta adecuada, que recibe dos parametros.
+    - state: estado
+    - action: Objeto que tiene dos variables.
+      - un tipo de accion
+      - Puede o no tener un pailod(el valor que le estamos mandando para que modifique el estado)
+    - Siempre retorna el estado (state)
+  - initialState: El estado inicial del estado que se suguiere que sea un objeto
+  - init: funcion que permite hacer una transformación al estado inicial (si es requerido) y es opcional
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
