@@ -15,6 +15,16 @@ export const shoppingInitialState = {
 export function shoppingReducer(state, action) {
   switch (action.type) {
     case TYPES.ADD_TO_CART: {
+      // console.log(state, action)
+      const newItem = state.products.find(
+        (product) => product.id === action.payload
+      )
+      // console.log(newItem)
+      return {
+        ...state,
+        cart: [...state.cart, newItem],
+      }
+      // console.log('state.cart', state.cart)
     }
     case TYPES.REMOVE_ONE_FROM_CART: {
     }
