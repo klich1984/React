@@ -2,7 +2,7 @@
 
 Notas
 
-Es una función pura que nos permite manejar el estado, por lo que no tendra efectos secundarios ni interna ni externamente.
+Es una función pura que nos permite manejar el estado, por lo que no tendra efectos secundarios, ni interna ni externamente.
 
 const [state, dispatch] = useReducer(first, second, third)
 
