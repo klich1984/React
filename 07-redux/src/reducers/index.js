@@ -1,10 +1,10 @@
 import contadorReducer from './contadorReducer'
+import { shoppingReducer } from './shoppingReducer'
 // import { crudReducer } from "./crudReducer";
-// import { shoppingReducer } from "./shoppingReducer";
 
 const reducer = {
   contador: contadorReducer,
-  // shopping: shoppingReducer,
+  shopping: shoppingReducer,
   // crud: crudReducer,
 }
 
