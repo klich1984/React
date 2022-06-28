@@ -1,4 +1,4 @@
-const CartItem = ({ data, delFromCart }) => {
+const CartItem = ({ data, delOneFromCart, delAllFromCart }) => {
   // console.log(data)
   const { id, name, price, quantity } = data
   return (
@@ -8,8 +8,8 @@ const CartItem = ({ data, delFromCart }) => {
         ${price}.00 x {quantity} = ${price * quantity}.00
       </h5>
       <br />
-      <button onClick={() => delFromCart(id)}>Eliminar un producto</button>
-      <button onClick={() => delFromCart(id, true)}>
+      <button onClick={() => delOneFromCart(id)}>Eliminar un producto</button>
+      <button onClick={() => delAllFromCart(id, true)}>
         Eliminar todos los productos
       </button>
     </div>
