@@ -1,8 +1,10 @@
-import { legacy_createStore } from 'redux'
+// Almacen aque valor tienen las variables en cada momento, usando reduxtoolkits
+import { configureStore } from '@reduxjs/toolkit'
+//
 import reducer from '../reducers'
 
-const store = legacy_createStore(reducer)
+const store = configureStore({ reducer })
 
-store.subscribe(() => console.log('store', store))
+store.subscribe(() => console.log(store))
 
 export default store
