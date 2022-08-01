@@ -14,7 +14,6 @@ function App() {
       <header className='App-header'>
         <h1>Manejo de Rutas</h1>
         <div className='App-header'>
-          {/* Comento para no tener los dos ejemplos corriendo al mismo tiempo */}
           <RuteoBasico />
           <RuteoPorParametros />
           <RuteoAnidado />
