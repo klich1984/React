@@ -1,47 +1,45 @@
-# Proyectos React
+# React Projects
 
-## Conceptos Basicos
+In this repository, you will find different projects and exercises with React concepts, From which I have been learning and practicing through courses and application creation.
 
-Primer proyecto de react utilizando la libreria Create React App [react-basicos](react-basicos)
+In the folders
 
-## Router con React Router
+- [03-react-rutas](03-react-rutas)
+- [04-react-memorizacion](04-react-memorizacion)
+- [05-react-context](05-react-context)
+- [06-react-reducers](06-react-reducers)
+- [07-redux](07-redux)
+- [react-basicos](react-basicos)
+- [react-rutas](react-rutas)
 
-Creacion de router utilizando la libreria React Router [react-rutas](react-rutas)
+They are exercises taken from Youtube course of the Jonathan Mircha chanel in which the handling and concepts of React are learned.
 
-`Nota`
+You can find at the following link.
 
-- El manejo de rutas con esta libreria no son buenas para el CEO ya que se manejan como una SPA
+[React course Youtube](https://www.youtube.com/watch?v=MPLN1ahXgcs&list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk&ab_channel=jonmircha)
 
-## Desarrollo y desplegado App React
+---
 
-- Desarrollo de una App y desplegarla en hosting y otras plataformas desde la terminal.
-- Framework MATERIAL - UI: Son componentes de React, enfocado a la interactividad y no al diseño
+## App my songs
 
-`Nota:` Como la Api lyrics dejo de funcionar, se utilizo a modo de prueba la API de [jikan.moe](https://jikan.docs.apiary.io/#).
-Falta Organizar los nombres de variables para la API nueva
+In the folder [app-mis-canciones](app-mis-canciones)
 
-APIS:
+You will find an Application, to perform a search for your favorite songs, by the name of the artist and the name of the song.
 
-- [theaudiodb.com](https://theaudiodb.com/api_guide.php)
-- [lyrics.ovh](https://lyrics.ovh/)
-  App que busca canciones y la letra de la cancion consumiendo dos Apis, usando MATERIAL-UI.
+It will show you a list that you can save to local storage.
 
-Despliegue de proyecto en:
+---
 
-[Netlify](https://vigorous-benz-d1e187.netlify.app/)
+## App Search Anime
 
--En githubPages
+In the folder [app-mis-canciones](app-mis-canciones)
 
-- Primero instalar dependencia de githubPages como dependencia de desarrollo (`npm i -gh-pages -D`)
-- Segundo en el package.json agregar una propiedad llamada `"homepage": "./"`
-- Agregar dos comandos en scripts `"predeploy": "npm run build"` y `"deploy": "gh-pages-d build"`
-  [githubPages](https://klich1984.github.io/React/)
+You will find an Application, that searches for your favorite animes and will show them to you in the form of a card, and where you click on them, you will be able to see all the information on the selected card in a new tab.
 
-y desplegada en servidor compartido(Subiendo el contenido por ftp)
+---
 
-[App en servidor](https://carlosum369.com/build/#/)
+## Validation Form
 
-- Para este ultimo se debe tener en cuenta la importacion de archivos ya que por defecto el build las toma desde la raiz del servidor y no desde la carpeta actual. `(./)`
-  Para solucionarlo se agrega en el package.json una propiedad llamada `"homepage": "./"`
+In the folder [validacion-formularios](validacion-formularios)
 
-- Ademas se debe activar la funcionalidad para tener las rutas mas amigables con HASrouter en App.js
+You will find an Apllication, Which will simulate the validation of different inputs, showing different errors in case some required field is missing or has an error in some field.
