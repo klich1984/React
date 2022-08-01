@@ -1,74 +1,15 @@
-# REACT
+This project, was created with create-react-app.
 
-Aprendidendo los conceptos basicos de REACTs
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+To run locally, you must clone it "`git clone`" and from the root folder, run the command.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Basic React
 
-### `npm test`
+Application create folloeing Jonathan Mircha's [youtube course](https://www.youtube.com/watch?v=MPLN1ahXgcs&list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk&ab_channel=jonmircha) to learn the basic concepts of React.abs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div style="text-align: center">
+<img src="https://lh3.googleusercontent.com/v7x7JVJ-yvXG_QHC-2eEUQKKuRtmsV0bGRwNU43TnUGYjSIA2CpWetmz-xT-S_cDY7umNAGDLnqZzpGhxI7v6-oqYCNqjuwRv1soffEw08SHkqfZ0_D2ZE7khmtWVL80NQ8s3VE23pd1T9TqG5ITr8a1tQA0boiAbN-lncMbRTuTuNVxJb-lrWPVEcQ3OjG15Lglwn8kue9-pQGKaHLbBqMF-K1IF4bYS7xRwQYMQte2bzdTJ8d3I_c9Q4kYcZsmGtonvfnIseNvcjn3bepRd88LHpf_EiiN4AAHcomYl1_NgJMcE62FdZnsVk3FyeN0ARRR1SIirAEUy1lTwYJgqyXPWZyBkSon4Asbu6wPH64TBTBurXRRsNULwQWn81zDHmIzo-vF0567doYj1UyCVFPX5zelCM6leUXlbHfBnhDAz_eUCzr8_0ktSuur7dWCmbKO_OJbo8RRdUoAU7bvOdmu0DtEpWdYe1qxk9_IbErzZfPg5KHxe3UsIUCfiPGkDmXlBE3HtVcDvr14z5T5Zwe4V1iBBN_R_Dz5gkXhVMbnb8iSrv197jY93yMoSPFXmhsp6v9kVoa1u0B_f2C6azT12jmKrLdPq9-Gt8gWQCEshFdTxTJhl1ilzNI8sn_rX0AWKJ9r71NKEZ61C4KP1lFCOM1Ldkr-gdmO6kpIBirM34Zh5_dsAtjBWeeZ-X-UrSumNWDmmCaDssHENCR7ZRC0bLCqM8zk5VspEDwGvO700HmvK9KlSMm-QBAls5tCi8q4hiu8bVK9-SmDm_mFUICIGwf3cj6O=w53-h600-no?authuser=1" alt="Screen Aplication Basic React">
+</div>
