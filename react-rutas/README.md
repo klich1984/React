@@ -1,70 +1,10 @@
-# Getting Started with Create React App
+# React-router Concepts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple example to learn the basic concepts of react-router.
 
-## Available Scripts
+- Basic routing
+- Routing by Parameters
+- Nested Routing
+- Redirects
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Running app](https://lh3.googleusercontent.com/Ii0cCSnx0t6di7xQlKb2Lyq7p48PmbflBDMANQKOKfqZ7HlkOaXd1s9aIz9RYL5Cpezm5MeVboscX2Eosf0tI7nGady67Adt1RMFo6IERiIvubCy6SJbHopUt6I-dpavGiCwJBn9ySA2TLVG1Ty91D8Ufz008niTNsHR2D-vdtOUIVrqYr4EXUfCx3v-mlj85sa0yX_PCaHepsyWAQdxTwgGVdLAwL6GwDcS7HTyRSgmC8V8gsuLqnQ7fYrd72OtOP5ffA7JKejGiMijUALcowvDZEuI1_npusEfawLcds-zQK08W6wu2YP7islDpd5PamDMrX7PxmSorscxf3U0kXbBNGnQZGIisefdhyy5wKPSnKgdYM2vv84TBRAHG_mub2DD7a05MS1jC6TRwG5MlvHJmJVGjl6hIDIsUHcIteE6mLkMfdLgo1OYOl9RklUyPwtrEeXjxyYP3oxQyO6SmvKlvHGdsx8yV8JNErKc1rQMCFhU6Bz_qRH-ectGdFXkGjXwxFgFVoUuvRKJb2vrwtMII5msyNQVl_oeoSFYH-4y0SqMQCwoatA3v44fsKR7iz0sFREEeWZgSdtmckHbQnWa3wFY_gwK_4xYYDXxd2K-wxhPdVbHG5zmdZuP9QMM0eZt3LGCF-6PC_gX1YZlQIIWnRYQ4nWUiC5JbH7nvdmqqbx72k9iUfJPdKvnwDVpCB9GaYf1io3y2pTEYKoE2XtAvJ2cAtKg1zZ3FPq50zDkOvxtlT_UzOPv6cXYa4PTA-GJvSkLgGlz61TdbEMD18P2ckMC5CDz=w493-h600-no?authuser=1)
