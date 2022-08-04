@@ -10,22 +10,23 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 hr {
   margin: 2rem auto;
 }
 
-a {
-  margin-right: 1rem;
-}
-
-li {
+/* li {
   margin-bottom: 1rem;
-}
+} */
 
-.active {
+/* .active {
   font-weight: bold;
   color: #61dafb;
-}
+} */
 
 input[type='text'],
 input[type='email'],
