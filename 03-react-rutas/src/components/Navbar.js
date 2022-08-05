@@ -10,28 +10,13 @@ const Navbar = () => {
           <nav className='header-navbar'>
             <ul>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                  to='/conceptos-basicos'
-                >
-                  Conceptos Basicos
-                </NavLink>
+                <NavLink to='/conceptos-basicos'>Conceptos Basicos</NavLink>
               </li>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                  to='/crud-api'
-                >
-                  App CrudApi
-                </NavLink>
+                <NavLink to='/crud-api'>App CrudApi</NavLink>
               </li>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                  to='/song-search'
-                >
-                  App Song Search
-                </NavLink>
+                <NavLink to='/song-search'>App Song Search</NavLink>
               </li>
             </ul>
           </nav>

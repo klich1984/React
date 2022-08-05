@@ -1,82 +1,54 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import NavLink from './NavLink'
 
 const MenuConceptos = () => {
-  let activeStyle = {
-    textDecoration: 'underline',
-  }
-
-  // let activeClassName = 'underline'
+  let urlPath = '/conceptos-basicos'
 
   return (
     <nav>
       <ol>
         <li>
           <span>Enlaces HTML(No recomendaddo por que recarga la pagína): </span>
-          <a href='/'>Home</a>
-          <a href='acerca'>Acerca</a>
-          <a href='contacto'>Contacto</a>
+          <a href={urlPath}>Home</a>
+          <a href={`${urlPath}/acerca`}>Acerca</a>
+          <a href={`${urlPath}/contacto`}>Contacto</a>
         </li>
         <li>
           <span>Componente Link: </span>
-          <Link to='/'>Home</Link>
-          <Link to='acerca'>Acerca</Link>
-          <Link to='contacto'>contacto</Link>
-          <Link to='no-existe'>No existe</Link>
+          <Link to={urlPath}>Home</Link>
+          <Link to={`${urlPath}/acerca`}>Acerca</Link>
+          <Link to={`${urlPath}/contacto`}>contacto</Link>
+          <Link to={`${urlPath}/no-existe`}>No existe</Link>
         </li>
         <li>
           {/* La diferencia entre Link y Navlink es que el NavLink le puedo pasar una clase para saber que link esta activo */}
           <span>Componente NavLink: </span>
-          <NavLink
-            to='/'
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to='acerca'
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Acerca
-          </NavLink>
-          <NavLink
-            to='contacto'
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Contacto
-          </NavLink>
+          <NavLink to={urlPath}>Home</NavLink>
+          <NavLink to={`${urlPath}/acerca`}>Acerca</NavLink>
+          <NavLink to={`${urlPath}/contacto`}>Contacto</NavLink>
         </li>
         <li>
           <span>Párametros: </span>
-          <NavLink
-            to='usuario/carlos'
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Carlos
-          </NavLink>
-          <NavLink
-            to='usuario/erica'
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Erica
-          </NavLink>
+          <NavLink to={`${urlPath}/usuario/carlos`}>Carlos</NavLink>
+          <NavLink to={`${urlPath}/usuario/erica`}>Erica</NavLink>
         </li>
         <li>
           <span>Parámetros de Consulta: </span>
-          <Link to='/productos'>Productos</Link>
+          <Link to={`${urlPath}/productos`}>Productos</Link>
         </li>
         <li>
           <span>Redirecciones: </span>
-          <Link to='/about'>About</Link>
-          <Link to='/contact'>Contact</Link>
+          <Link to={`${urlPath}/about`}>About</Link>
+          <Link to={`${urlPath}/contact`}>Contact</Link>
         </li>
         <li>
           <span>Rutas Anidadas: </span>
-          <Link to='/react'>React</Link>
+          <Link to={`${urlPath}/react`}>React</Link>
         </li>
         <li>
           <span>Rutas Privadas: </span>
-          <Link to='login'>Login</Link>
-          <Link to='dashboard'>Dashboard</Link>
+          <Link to={`${urlPath}/login`}>Login</Link>
+          <Link to={`${urlPath}/dashboard`}>Dashboard</Link>
         </li>
       </ol>
     </nav>

@@ -16,13 +16,15 @@ import Productos from '../pages/Productos'
 import ReactTopics from '../pages/ReactTopics'
 import Usuario from '../pages/Usuario'
 import MenuConceptos from './MenuConceptos'
+import Navbar from './Navbar'
 import PrivateRoute from './PrivateRoute'
 
-const ConceptosBasicos = () => {
+const WithHasRouter = () => {
   return (
     <div>
-      <h2>Hash router</h2>
       <HashRouter>
+        <Navbar />
+        <h2>Hash router</h2>
         <MenuConceptos />
         <nav>
           <Link to='/'>Home</Link>
@@ -61,45 +63,8 @@ const ConceptosBasicos = () => {
           <Route path='*' element={<Error404 />} />
         </Routes>
       </HashRouter>
-      <hr />
-      <h2>Conceptos Básicos</h2>
-      <Router>
-        <MenuConceptos />
-        {/* Routes es el remplazo del componente Switch */}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='acerca' element={<Acerca />} />
-          <Route path='contacto' element={<Contacto />} />
-          <Route path='usuario/:username' element={<Usuario />} />
-          <Route path='productos' element={<Productos />} />
-          {/* Redirecciones */}
-          <Route
-            path='/about'
-            element={
-              <>
-                {' '}
-                <Navigate to='/acerca' />{' '}
-              </>
-            }
-          />
-          <Route
-            path='/contact'
-            element={
-              <>
-                {' '}
-                <Navigate to='/contacto' />{' '}
-              </>
-            }
-          />
-          <Route path='/react/*' element={<ReactTopics />} />
-          <Route path='/login' element={<Login />} />
-          {/* <Route path='/dashboard' element={<Daschboard />} /> */}
-          <Route path='/dashboard' element={<PrivateRoute />} />
-          <Route path='*' element={<Error404 />} />
-        </Routes>
-      </Router>
     </div>
   )
 }
 
-export default ConceptosBasicos
+export default WithHasRouter

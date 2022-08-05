@@ -1,10 +1,9 @@
 import React from 'react'
 import { NavLink as NavLinkReactRouter } from 'react-router-dom'
 
-const NavLink = ({ to, children, ...props }) => {
+const NavLink = ({ to, children }) => {
   return (
     <NavLinkReactRouter
-      {...props}
       className={({ isActive }) => (isActive ? 'active' : '')}
       to={to}
     >

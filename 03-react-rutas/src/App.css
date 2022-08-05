@@ -1,9 +1,42 @@
 :root {
   --primary-color: #2c3333;
   --third-color: #395b64;
-  --fourd-color: #a5c9ca;
+  --four-color: #61dafb;
   --secondary-color: #e7f6f2;
 }
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+footer {
+  background-color: var(--primary-color);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+footer a:hover {
+  color: var(--four-color);
+}
+
+header {
+  background-color: #2c3333;
+}
+
+main {
+  margin-bottom: 70px;
+}
+
 .App {
   text-align: center;
 }
@@ -13,15 +46,17 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--four-color);
 }
 
 .container {
   max-width: 1200px;
 }
 
-header {
-  background-color: #2c3333;
+.active {
+  color: #61dafb;
+  font-weight: bold;
+  pointer-events: none;
 }
 
 .header-menu {
@@ -32,6 +67,7 @@ header {
   margin: 0 auto;
   color: #e7f6f2;
   font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
+  letter-spacing: 1px;
 }
 
 .header-menu .header-navbar ul {
@@ -49,30 +85,24 @@ header {
 .header-menu .header-navbar a {
   text-decoration: none;
   color: var(--secondary-color);
+  transition: all 0.3s ease-in;
+  padding: 1rem 0;
+}
+
+.header-menu .header-navbar a:hover {
+  box-shadow: inset 0 -2px 0 var(--four-color);
+  color: var(--four-color);
 }
 
 .header-menu .header-navbar .active {
   color: #61dafb;
   font-weight: bold;
-  border-bottom: 1px solid #61dafb;
   pointer-events: none;
-}
-
-footer {
-  background-color: var(--primary-color);
-  padding: 1rem;
-}
-
-footer a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--secondary-color);
-  text-decoration: none;
 }
 
 @media (min-width: 779px) {
   .header-menu {
     flex-direction: row;
+    padding: 0 1rem;
   }
 }

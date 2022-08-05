@@ -1,31 +1,43 @@
-import ConceptosBasicos from './components/ConceptosBasicos'
+import { useState } from 'react'
+// import ConceptosBasicos from './components/ConceptosBasicos'
 import CrudApi from './components/CrudApi'
 import SongSearch from './components/SongSearch'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
+import ConceptosBasicos from './pages/ConceptosBasicos'
+import WithHasRouter from './components/WithHasRouter'
+import Footer from './components/Footer'
+import WithRouter from './components/WithRouter'
 
 /* eslint-disable jsx-a11y/anchor-has-content */
 function App() {
+  const [tagState, setTagState] = useState(true)
+
+  const handleClick = () => {
+    window.history.pushState({}, 'home', '')
+    setTagState(!tagState)
+  }
+
   return (
     <div className='App'>
-      <Router>
-        <Navbar />
-        {/* <ConceptosBasicos /> */}
-        <hr />
-        {/* <CrudApi /> */}
-        <hr />
-        {/* <SongSearch /> */}
-        <footer>
-          <a
-            href='https://reactrouter.com/docs/en/v6/getting-started/overview'
-            target='_blank'
-            rel='noreferrer'
-          >
-            Documentación
-          </a>
-        </footer>
-      </Router>
+      <main>
+        {tagState ? <WithRouter /> : <WithHasRouter />}
+
+        <button onClick={handleClick}>
+          Cambiar a{tagState ? ' HasRouter' : ' Router'}
+        </button>
+        <Router>
+          {/* <Route path='/crud-api' element={<CrudApi />} /> */}
+          {/* <Route path='/' element={<HomePages />} /> */}
+          {/* <ConceptosBasicos /> */}
+          {/* <hr /> */}
+          {/* <CrudApi /> */}
+          {/* <hr /> */}
+          {/* <SongSearch /> */}
+        </Router>
+      </main>
+      <Footer />
     </div>
   )
 }
