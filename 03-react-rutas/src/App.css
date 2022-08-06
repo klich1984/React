@@ -1,15 +1,25 @@
 :root {
+  /* Text */
+  --14-16: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
+  --12-16: calc(12px + (16 - 12) * ((100vw - 320px) / (1200 - 320)));
+  --11-16: calc(11px + (16 - 12) * ((100vw - 320px) / (1200 - 320)));
+
   --primary-color: #2c3333;
   --third-color: #395b64;
   --four-color: #61dafb;
   --secondary-color: #e7f6f2;
   --button-color: #d56c7a;
-  /* --button-hover-color:  */
+  --bgcolor-list-item: #d1d1d1;
 }
 
 a {
   text-decoration: none;
   transition: all 0.3s ease-in;
+}
+
+a:hover {
+  color: var(--button-color);
+  box-shadow: inset 0 -2px 0 var(--button-color);
 }
 
 footer {
@@ -28,6 +38,7 @@ footer a {
 
 footer a:hover {
   color: var(--four-color);
+  box-shadow: none;
 }
 
 footer p {
@@ -42,9 +53,6 @@ header {
 
 main {
   grid-area: 2 / 2 / 3 / 3;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
 }
 
 .App {
@@ -64,9 +72,10 @@ main {
 }
 
 .active {
-  color: #61dafb;
+  color: var(--button-color);
   font-weight: bold;
   pointer-events: none;
+  box-shadow: inset 0 -2px 0 var(--button-color);
 }
 
 .container {
@@ -138,6 +147,33 @@ header .container img {
   width: 76px;
 }
 
+/* App router Section */
+.app-container-router {
+  margin-top: 2rem;
+}
+
+nav .list-menu {
+  list-style: none;
+  padding: 0;
+}
+nav .list-menu li {
+  padding: 1rem;
+  font-size: var(--12-16);
+}
+
+nav .list-menu li p {
+  margin: 0.5rem 0;
+}
+
+nav .list-menu li:nth-child(odd) {
+  background-color: var(--bgcolor-list-item);
+}
+.list-menu li div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Descktop */
 @media (min-width: 779px) {
   .header-menu {
     flex-direction: row;
@@ -150,6 +186,6 @@ header .container img {
   }
 
   .app-buttons button {
-    margin: 0 1rem 1rem;
+    margin: 0 1rem;
   }
 }

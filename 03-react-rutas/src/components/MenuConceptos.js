@@ -1,54 +1,138 @@
-import { Link } from 'react-router-dom'
-import NavLink from './NavLink'
+import { useRef } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+// import NavLink from './NavLink'
 
 const MenuConceptos = () => {
-  let urlPath = '/conceptos-basicos'
+  const sectionRef = useRef()
 
+  const handleClick = () => {
+    sectionRef.current.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
   return (
     <nav>
-      <ol>
+      <ol className='list-menu'>
         <li>
-          <span>Enlaces HTML(No recomendaddo por que recarga la pagína): </span>
-          <a href={urlPath}>Home</a>
-          <a href={`${urlPath}/acerca`}>Acerca</a>
-          <a href={`${urlPath}/contacto`}>Contacto</a>
+          <p>
+            Enlaces{' '}
+            <i>
+              a de <b>HTML</b>
+            </i>{' '}
+            No se recomiendan por que recarga la pagína:
+          </p>
+          <div>
+            <a href='/'>Home</a>
+            <a href='acerca'>Acerca</a>
+            <a href='contacto'>Contacto</a>
+          </div>
         </li>
         <li>
-          <span>Componente Link: </span>
-          <Link to={urlPath}>Home</Link>
-          <Link to={`${urlPath}/acerca`}>Acerca</Link>
-          <Link to={`${urlPath}/contacto`}>contacto</Link>
-          <Link to={`${urlPath}/no-existe`}>No existe</Link>
+          <p>
+            Enlaces usando el Componente{' '}
+            <b>
+              <i>Link</i>
+            </b>
+            :
+          </p>
+          <div>
+            <Link onClick={handleClick} to='/'>
+              Home
+            </Link>
+            <Link onClick={handleClick} to='acerca'>
+              Acerca
+            </Link>
+            <Link onClick={handleClick} to='contacto'>
+              contacto
+            </Link>
+            <NavLink onClick={handleClick} to='no-existe'>
+              No existe
+            </NavLink>
+          </div>
         </li>
         <li>
           {/* La diferencia entre Link y Navlink es que el NavLink le puedo pasar una clase para saber que link esta activo */}
-          <span>Componente NavLink: </span>
-          <NavLink to={urlPath}>Home</NavLink>
-          <NavLink to={`${urlPath}/acerca`}>Acerca</NavLink>
-          <NavLink to={`${urlPath}/contacto`}>Contacto</NavLink>
+          <p>
+            Enlaces usando el Componente{' '}
+            <b>
+              <i>NavLink</i>
+            </b>
+            :
+          </p>
+          <div>
+            <NavLink onClick={handleClick} to='/'>
+              Home
+            </NavLink>
+            <NavLink onClick={handleClick} to='acerca'>
+              Acerca
+            </NavLink>
+            <NavLink onClick={handleClick} to='contacto'>
+              Contacto
+            </NavLink>
+          </div>
         </li>
         <li>
-          <span>Párametros: </span>
-          <NavLink to={`${urlPath}/usuario/carlos`}>Carlos</NavLink>
-          <NavLink to={`${urlPath}/usuario/erica`}>Erica</NavLink>
+          <p>
+            Paso de párametros por la{' '}
+            <b>
+              <i>URL</i>:
+            </b>
+          </p>
+          <div>
+            <NavLink onClick={handleClick} to='usuario/carlos'>
+              Carlos
+            </NavLink>
+            <NavLink onClick={handleClick} to='usuario/pepito'>
+              Pepito
+            </NavLink>
+            <NavLink onClick={handleClick} to='usuario/perez'>
+              Perez
+            </NavLink>
+          </div>
         </li>
         <li>
-          <span>Parámetros de Consulta: </span>
-          <Link to={`${urlPath}/productos`}>Productos</Link>
+          <p>
+            Parámetros de Consulta por{' '}
+            <b>
+              <i>URL</i>
+            </b>
+            :{' '}
+          </p>
+          <div>
+            <NavLink onClick={handleClick} to='productos'>
+              Productos
+            </NavLink>
+          </div>
         </li>
         <li>
-          <span>Redirecciones: </span>
-          <Link to={`${urlPath}/about`}>About</Link>
-          <Link to={`${urlPath}/contact`}>Contact</Link>
+          <p>Manejo de Redirecciones: </p>
+          <div>
+            <NavLink onClick={handleClick} to='about'>
+              About
+            </NavLink>
+            <NavLink onClick={handleClick} to='contact'>
+              Contact
+            </NavLink>
+          </div>
         </li>
         <li>
-          <span>Rutas Anidadas: </span>
-          <Link to={`${urlPath}/react`}>React</Link>
+          <p>Manejo de Rutas Anidadas: </p>
+          <div>
+            <NavLink onClick={handleClick} to='react'>
+              React
+            </NavLink>
+          </div>
         </li>
         <li>
-          <span>Rutas Privadas: </span>
-          <Link to={`${urlPath}/login`}>Login</Link>
-          <Link to={`${urlPath}/dashboard`}>Dashboard</Link>
+          <p>Manejo de Rutas Privadas: </p>
+          <div ref={sectionRef}>
+            <NavLink onClick={handleClick} to='login'>
+              Login
+            </NavLink>
+            <NavLink onClick={handleClick} to='dashboard'>
+              Dashboard
+            </NavLink>
+          </div>
         </li>
       </ol>
     </nav>
