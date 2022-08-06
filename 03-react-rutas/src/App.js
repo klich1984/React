@@ -1,41 +1,34 @@
 import { useState } from 'react'
-// import ConceptosBasicos from './components/ConceptosBasicos'
+import './App.css'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import ConceptosBasicos from './pages/ConceptosBasicos'
+import WithRouter from './components/WithRouter'
+import ButtonsApp from './components/ButtonsApp'
+import WithHasRouter from './components/WithHasRouter'
 import CrudApi from './components/CrudApi'
 import SongSearch from './components/SongSearch'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Navbar from './components/Navbar'
-import ConceptosBasicos from './pages/ConceptosBasicos'
-import WithHasRouter from './components/WithHasRouter'
-import Footer from './components/Footer'
-import WithRouter from './components/WithRouter'
 
-/* eslint-disable jsx-a11y/anchor-has-content */
 function App() {
-  const [tagState, setTagState] = useState(true)
-
-  const handleClick = () => {
-    window.history.pushState({}, 'home', '')
-    setTagState(!tagState)
-  }
-
+  const [showRouter, setShowRouter] = useState(false)
+  const [showHasRouter, setShowHasRouter] = useState(false)
+  const [showSongSearch, setShowSongsearch] = useState(false)
+  const [showCrudApi, setShowCrudApi] = useState(false)
   return (
     <div className='App'>
+      <Header />
       <main>
-        {tagState ? <WithRouter /> : <WithHasRouter />}
-
-        <button onClick={handleClick}>
-          Cambiar a{tagState ? ' HasRouter' : ' Router'}
-        </button>
-        <Router>
-          {/* <Route path='/crud-api' element={<CrudApi />} /> */}
-          {/* <Route path='/' element={<HomePages />} /> */}
-          {/* <ConceptosBasicos /> */}
-          {/* <hr /> */}
-          {/* <CrudApi /> */}
-          {/* <hr /> */}
-          {/* <SongSearch /> */}
-        </Router>
+        <ConceptosBasicos />
+        <ButtonsApp
+          setShowRouter={setShowRouter}
+          setShowHasRouter={setShowHasRouter}
+          setShowSongsearch={setShowSongsearch}
+          setShowCrudApi={setShowCrudApi}
+        />
+        {showRouter && <WithRouter />}
+        {showHasRouter && <WithHasRouter />}
+        {showCrudApi && <CrudApi />}
+        {showSongSearch && <SongSearch />}
       </main>
       <Footer />
     </div>

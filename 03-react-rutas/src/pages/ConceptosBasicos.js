@@ -1,12 +1,19 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 
 const ConceptosBasicos = () => {
   return (
-    <div>
-      <h1>Pagina principal</h1>
-      <p>Navega por los diferentes menus</p>
-      <Outlet />
+    <div className='container'>
+      <p>
+        Esta <i>App</i> esta realizada con{' '}
+        <b>
+          <i>React</i>
+        </b>{' '}
+        y se realizo para practicar, aplicando los conceptos de{' '}
+        <b>
+          <i>React Router DOM</i>
+        </b>
+        .
+      </p>
     </div>
   )
 }
