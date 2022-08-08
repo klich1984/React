@@ -152,7 +152,8 @@ header .container img {
   margin-top: 2rem;
 }
 
-nav .list-menu {
+nav .list-menu,
+.section-page-list {
   list-style: none;
   padding: 0;
 }
@@ -168,9 +169,19 @@ nav .list-menu li p {
 nav .list-menu li:nth-child(odd) {
   background-color: var(--bgcolor-list-item);
 }
-.list-menu li div {
+.list-menu li div,
+.section-page-list {
   display: flex;
   justify-content: space-evenly;
+}
+
+.section-page {
+  margin: 2rem 0;
+  border-top: 1px solid var(--button-color);
+}
+
+.text-capitalize {
+  text-transform: capitalize;
 }
 
 /* Descktop */

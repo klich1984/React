@@ -14,6 +14,9 @@ function App() {
   const [showHasRouter, setShowHasRouter] = useState(false)
   const [showSongSearch, setShowSongsearch] = useState(false)
   const [showCrudApi, setShowCrudApi] = useState(false)
+
+  const handleRoute = () => window.history.pushState({}, '', '/')
+
   return (
     <div className='App'>
       <Header />
@@ -24,6 +27,7 @@ function App() {
           setShowHasRouter={setShowHasRouter}
           setShowSongsearch={setShowSongsearch}
           setShowCrudApi={setShowCrudApi}
+          handleRoute={handleRoute}
         />
         {showRouter && <WithRouter />}
         {showHasRouter && <WithHasRouter />}

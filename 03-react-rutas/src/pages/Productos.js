@@ -23,8 +23,13 @@ const Productos = () => {
     navigate(`?inicio=${start + LIMIT}&fin=${end + LIMIT}`)
   }
   return (
-    <div>
-      <h3>Productos</h3>
+    <div className='section-page'>
+      <h3>Págna de Productos</h3>
+      <p>
+        Se está renderizando la página de <b>Productos</b>, con la ruta{' '}
+        <b>"/productos/"</b>, que contiene una pequeña paginación de 100
+        productos, con paso de parámetros de consulta por la `URL`
+      </p>
       <p>
         Mostrando Productos del <b>{start}</b> al <b>{end}</b>.
       </p>

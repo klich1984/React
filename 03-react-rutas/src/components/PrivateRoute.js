@@ -1,11 +1,18 @@
-import { Route } from 'react-router-dom'
-
-const PrivateRoute = (props) => {
+const PrivateRoute = () => {
   // console.log(props)
   return (
-    <>
-      <h2>Hello</h2>
-    </>
+    <div className='section-page'>
+      <h3>
+        Página de <i>Dashboard</i>
+      </h3>
+      <p>
+        Se está renderizando la página de{' '}
+        <b>
+          <i>Dashboard</i>
+        </b>
+        , con la ruta <b>"/dashboard"</b>
+      </p>
+    </div>
   )
 }
 

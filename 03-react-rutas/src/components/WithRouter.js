@@ -1,5 +1,4 @@
 // Se recomienda usar el alias ya que es casi un estandar
-import { useRef } from 'react'
 import {
   BrowserRouter as Router,
   Routes,

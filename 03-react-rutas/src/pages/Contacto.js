@@ -2,11 +2,11 @@ import React from 'react'
 
 const Contacto = () => {
   return (
-    <div>
-      <h3>Contacto</h3>
+    <div className='section-page'>
+      <h3>Página de Contacto</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-        ipsum.
+        Se está renderizando la página <b>Contacto</b>, con la ruta{' '}
+        <b>"/contacto"</b>
       </p>
     </div>
   )

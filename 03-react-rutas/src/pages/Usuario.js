@@ -5,10 +5,17 @@ const Usuario = () => {
   // console.log(params)
   let { username } = useParams()
   return (
-    <div>
-      <h3>Perfil del usuario</h3>
+    <div className='section-page'>
+      <h3>
+        Página de perfil del <b>Usuario</b>
+      </h3>
       <p>
-        Nombre del Usuario <b>{username}</b>
+        Se está renderizando la página de <b>perfil de usuario</b>, pasando por
+        la `URL` el parametro del nombre del usuario, con la ruta{' '}
+        <b>"/usuario/{username}"</b>
+      </p>
+      <p>
+        Su nombre de usuario es: <b className='text-capitalize'>{username}</b>
       </p>
     </div>
   )

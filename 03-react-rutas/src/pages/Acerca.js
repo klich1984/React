@@ -2,13 +2,11 @@ import React from 'react'
 
 const Acerca = () => {
   return (
-    <div>
-      <h3>Acerca</h3>
+    <div className='section-page'>
+      <h3>Página de Acerca</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-        earum consequatur nesciunt eveniet at. Debitis, quae possimus? Deserunt
-        optio et commodi sequi officiis. Maiores veritatis aspernatur laborum
-        temporibus, magnam quas!
+        Se está renderizando la página de <b>Acerca</b>, con la ruta{' '}
+        <b>"/acerca"</b>
       </p>
     </div>
   )

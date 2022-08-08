@@ -5,8 +5,10 @@ const ButtonsApp = ({
   setShowHasRouter,
   setShowSongsearch,
   setShowCrudApi,
+  handleRoute,
 }) => {
-  const handleClick = (nameFunction) => {
+  const handleClick = (nameFunction, handleRoute) => {
+    handleRoute()
     // Reset values
     setShowRouter(false)
     setShowHasRouter(false)
@@ -32,14 +34,18 @@ const ButtonsApp = ({
 
   return (
     <section className='app-buttons'>
-      <button onClick={() => handleClick('router')}>
+      <button onClick={() => handleClick('router', handleRoute)}>
         Ver rutas con Router
       </button>
-      <button onClick={() => handleClick('has')}>
+      <button onClick={() => handleClick('has', handleRoute)}>
         Ver rutas con HasRouter
       </button>
-      <button onClick={() => handleClick('song')}>Ver App Song Search</button>
-      <button onClick={() => handleClick('api')}>Ver App Crud Api</button>
+      <button onClick={() => handleClick('song', handleRoute)}>
+        Ver App Song Search
+      </button>
+      <button onClick={() => handleClick('api', handleRoute)}>
+        Ver App Crud Api
+      </button>
     </section>
   )
 }
