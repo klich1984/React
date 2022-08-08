@@ -1,37 +1,36 @@
-import { Link, Route, Routes, useParams } from 'react-router-dom'
-
-const Topic = () => {
-  let { topic } = useParams()
-
-  return (
-    <div>
-      <h4>{topic}</h4>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
-        distinctio asperiores sint nam, temporibus, autem doloribus vel quas
-        mollitia enim rerum incidunt suscipit nulla iste in cumque. Eius,
-        voluptatum neque.
-      </p>
-    </div>
-  )
-}
+import { NavLink, Route, Routes } from 'react-router-dom'
+import Topic from './Topic'
 
 const ReactTopics = () => {
   return (
-    <div>
-      <h3>Temas de React</h3>
-      <ul>
+    <div className='section-page'>
+      <h3>Página de Rutas Anidadas</h3>
+      <p>
+        Se está renderizando la página{' '}
+        <b>
+          <i>Temas de React</i>
+        </b>
+        , con la ruta <b>"/react/*"</b>
+      </p>
+      <h4>
+        Ver Temas de <i>React</i>
+      </h4>
+      <ul className='section-page-list'>
         <li>
-          <Link to='jsx'>JSX</Link>
+          <NavLink to='jsx'>
+            <i>JSX</i>
+          </NavLink>
         </li>
         <li>
-          <Link to='props'>Props</Link>
+          <NavLink to='props'>
+            <i>Props</i>
+          </NavLink>
         </li>
         <li>
-          <Link to='estado'>Estado</Link>
+          <NavLink to='estado'>Estado</NavLink>
         </li>
         <li>
-          <Link to='componentes'>Componentes</Link>
+          <NavLink to='componentes'>Componentes</NavLink>
         </li>
       </ul>
 

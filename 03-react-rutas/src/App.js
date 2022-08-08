@@ -1,25 +1,40 @@
-import ConceptosBasicos from './components/ConceptosBasicos'
+import { useState } from 'react'
+import './App.css'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import ConceptosBasicos from './pages/ConceptosBasicos'
+import WithRouter from './components/WithRouter'
+import ButtonsApp from './components/ButtonsApp'
+import WithHasRouter from './components/WithHasRouter'
 import CrudApi from './components/CrudApi'
 import SongSearch from './components/SongSearch'
 
-/* eslint-disable jsx-a11y/anchor-has-content */
 function App() {
+  const [showRouter, setShowRouter] = useState(false)
+  const [showHasRouter, setShowHasRouter] = useState(false)
+  const [showSongSearch, setShowSongsearch] = useState(false)
+  const [showCrudApi, setShowCrudApi] = useState(false)
+
+  const handleRoute = () => window.history.pushState({}, '', '/')
+
   return (
     <div className='App'>
-      <h1>React Rutas</h1>
-      <a
-        href='https://reactrouter.com/docs/en/v6/getting-started/overview'
-        target='_blank'
-        rel='noreferrer'
-      >
-        Documentación
-      </a>
-      <hr />
-      <SongSearch />
-      <hr />
-      {/* <CrudApi /> */}
-      <hr />
-      {/* <ConceptosBasicos /> */}
+      <Header />
+      <main>
+        <ConceptosBasicos />
+        <ButtonsApp
+          setShowRouter={setShowRouter}
+          setShowHasRouter={setShowHasRouter}
+          setShowSongsearch={setShowSongsearch}
+          setShowCrudApi={setShowCrudApi}
+          handleRoute={handleRoute}
+        />
+        {showRouter && <WithRouter />}
+        {showHasRouter && <WithHasRouter />}
+        {showCrudApi && <CrudApi />}
+        {showSongSearch && <SongSearch />}
+      </main>
+      <Footer />
     </div>
   )
 }
