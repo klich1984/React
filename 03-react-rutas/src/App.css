@@ -184,6 +184,31 @@ nav .list-menu li:nth-child(odd) {
   text-transform: capitalize;
 }
 
+/* Crud API */
+.crud-api {
+  font-size: var(--12-16);
+  margin-bottom: 2rem;
+}
+.crud-api header {
+  background-color: #fff;
+}
+
+.crud-api header nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.crud-api tr td:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.crud-api form {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Descktop */
 @media (min-width: 779px) {
   .header-menu {
@@ -198,5 +223,10 @@ nav .list-menu li:nth-child(odd) {
 
   .app-buttons button {
     margin: 0 1rem;
+  }
+
+  /* Crud API */
+  .crud-api form {
+    max-width: 450px;
   }
 }

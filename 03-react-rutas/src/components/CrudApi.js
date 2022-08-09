@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { HashRouter, NavLink, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  NavLink,
+  Route,
+  Routes,
+} from 'react-router-dom'
 import { helpHttp } from '../helpers/helpHttp'
 import Error404 from '../pages/Error404'
 
@@ -112,20 +118,20 @@ const CrudApi = () => {
   }
 
   return (
-    <div>
-      <HashRouter basename='santos/'>
-        <header>
+    <div className='crud-api'>
+      <Router>
+        <header className='section-page'>
           <h2>CRUD API con Rutas</h2>
           <nav>
             <NavLink
               to='/'
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              // style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               Santos
             </NavLink>
             <NavLink
               to='/agregar'
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              // style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               Agregar
             </NavLink>
@@ -136,7 +142,6 @@ const CrudApi = () => {
             path='/'
             element={
               <div>
-                <h2>Home Santos</h2>
                 {loading && <Loader />}
                 {error && (
                   <Message
@@ -178,8 +183,7 @@ const CrudApi = () => {
           />
           <Route path='/*' element={<Error404 />} />
         </Routes>
-      </HashRouter>
-      <h2>CRUD APP</h2>
+      </Router>
     </div>
   )
 }

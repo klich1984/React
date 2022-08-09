@@ -40,11 +40,11 @@ const ButtonsApp = ({
       <button onClick={() => handleClick('has', handleRoute)}>
         Ver rutas con HasRouter
       </button>
-      <button onClick={() => handleClick('song', handleRoute)}>
-        Ver App Song Search
-      </button>
       <button onClick={() => handleClick('api', handleRoute)}>
         Ver App Crud Api
+      </button>
+      <button onClick={() => handleClick('song', handleRoute)}>
+        Ver App Song Search
       </button>
     </section>
   )
