@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# App React Router DOM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App created to practice the concepts of the React Router DOM,
+Following the course of REACT ([Link course](https://www.youtube.com/watch?v=MPLN1ahXgcs&list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk&ab_channel=jonmircha)) of the Jonathan Mircha's channel, in which you will four exercises.
 
-## Available Scripts
+- Concepts of the React Router DOM, in general, realized with BrowserRoute.
 
-In the project directory, you can run:
+## App with BrowserRoute
 
-### `npm start`
+![WithBrowserRouter](./src/assets/BrowseRouter.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Concepts of the React Router DOM, in general, realized with HasRouter
 
-### `npm test`
+## App with HasRouter
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![WithHasRouter](./src/assets/HasRouter.jpg)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- CRUD application (made with JSON-server) and the Knights of the Zodiac theme
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## CRUD API APP
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![CRUD API App](./src/assets/CRUDAPP.jpg)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Application to save songs in local storage for data persistence, used for React router Dom routes and the consumption of two APIs
+  [lyricsovh](https://lyricsovh.docs.apiary.io/#) and
+  [theaudiodb](https://www.theaudiodb.com/api_guide.php)
+  to get the lyrics and biography of the songs.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+(these APIs are responding a bit slow, so the response may take up to a minute to arrive)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Song Search APP
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Song Search App](./src/assets/SongSearchApp.jpg)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This app is created with Create React App ([Link documentation](https://github.com/facebook/create-react-app)).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run this repository on your local pc you must copy all files in your PC.
 
-### Code Splitting
+`npm install`
+`npm run start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+and you must also have json-server ([Link Documentation](https://www.npmjs.com/package/json-server)) installed and running it on a different port, a command was created in the package.json of this application that will start it on port 5000 with the command
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`npm run fake-api`
