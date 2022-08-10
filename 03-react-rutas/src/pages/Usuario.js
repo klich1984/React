@@ -11,7 +11,7 @@ const Usuario = () => {
       </h3>
       <p>
         Se está renderizando la página de <b>perfil de usuario</b>, pasando por
-        la `URL` el parametro del nombre del usuario, con la ruta{' '}
+        la <i>URL</i> el parametro del nombre del usuario, con la ruta{' '}
         <b>"/usuario/{username}"</b>
       </p>
       <p>

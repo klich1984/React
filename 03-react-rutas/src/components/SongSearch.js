@@ -14,15 +14,12 @@ import SongDetails from './SongDetails'
 import SongForm from './SongForm'
 import SongTable from './SongTable'
 
-// let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [] // Leer del Local Storage
-
 const SongSearch = () => {
   // Variables de estado
   const [search, setSearch] = useState(null)
   const [lyric, setLyric] = useState(null)
   const [bio, setBio] = useState(null)
   const [loading, setLoading] = useState(false)
-  //const [mySongs, setMySongs] = useState(mySongsInit) // Variable del Local Store
 
   const { mySongs, setMySongs } = useContext(LocalStorageContext)
   useEffect(() => {

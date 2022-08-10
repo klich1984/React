@@ -28,7 +28,7 @@ const Productos = () => {
       <p>
         Se está renderizando la página de <b>Productos</b>, con la ruta{' '}
         <b>"/productos/"</b>, que contiene una pequeña paginación de 100
-        productos, con paso de parámetros de consulta por la `URL`
+        productos, con paso de parámetros de consulta por la <i>URL</i>
       </p>
       <p>
         Mostrando Productos del <b>{start}</b> al <b>{end}</b>.

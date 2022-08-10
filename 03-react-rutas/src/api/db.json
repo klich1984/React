@@ -24,31 +24,6 @@
       "id": 5,
       "name": "Ikki",
       "constellation": "Fénix"
-    },
-    {
-      "id": 6,
-      "name": "Mu",
-      "constellation": "Aries"
-    },
-    {
-      "id": 7,
-      "name": "Saga",
-      "constellation": "Geminis"
-    },
-    {
-      "name": "Aioria",
-      "constellation": "Leo",
-      "id": 1651618684990
-    },
-    {
-      "name": "Afrodita",
-      "constellation": "Pisis",
-      "id": 1654394338457
-    },
-    {
-      "name": "Camus",
-      "constellation": "Acuario",
-      "id": 1654394403180
     }
   ]
 }
