@@ -31,15 +31,11 @@ function App() {
             setShowCrudApi={setShowCrudApi}
             handleRoute={handleRoute}
           />
+          {showRouter && <WithRouter />}
+          {showHasRouter && <WithHasRouter />}
+          {showCrudApi && <CrudApi />}
+          {showSongSearch && <SongSearch />}
         </LocalStorageProvider>
-        {showRouter && <WithRouter />}
-        {showHasRouter && <WithHasRouter />}
-        {showCrudApi && <CrudApi />}
-        {showSongSearch && (
-          <LocalStorageProvider>
-            <SongSearch />
-          </LocalStorageProvider>
-        )}
       </main>
       <Footer />
     </div>

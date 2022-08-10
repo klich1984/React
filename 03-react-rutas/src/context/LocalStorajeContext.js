@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-const localStorageContext = createContext()
+const LocalStorageContext = createContext()
 
 let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [] // Leer del Local Storage
 
@@ -15,11 +15,11 @@ const LocalStorageProvider = ({ children }) => {
   const data = { mySongs, setMySongs, getLocalStorage }
 
   return (
-    <localStorageContext.Provider value={data}>
+    <LocalStorageContext.Provider value={data}>
       {children}
-    </localStorageContext.Provider>
+    </LocalStorageContext.Provider>
   )
 }
 
 export { LocalStorageProvider }
-export default localStorageContext
+export default LocalStorageContext

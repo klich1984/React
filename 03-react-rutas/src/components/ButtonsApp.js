@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import localStorageContext from '../context/LocalStorajeContext'
+import LocalStorageContext from '../context/LocalStorajeContext'
 
 const ButtonsApp = ({
   setShowRouter,
@@ -8,9 +8,8 @@ const ButtonsApp = ({
   setShowCrudApi,
   handleRoute,
 }) => {
-  const { getLocalStorage } = useContext(localStorageContext)
+  const { getLocalStorage } = useContext(LocalStorageContext)
   const handleClick = (nameFunction, handleRoute) => {
-    getLocalStorage()
     handleRoute()
     // Reset values
     setShowRouter(false)
@@ -35,6 +34,11 @@ const ButtonsApp = ({
     }
   }
 
+  const handleSongSearch = () => {
+    handleClick('song', handleRoute)
+    getLocalStorage()
+  }
+
   return (
     <section className='app-buttons'>
       <button onClick={() => handleClick('router', handleRoute)}>
@@ -46,9 +50,7 @@ const ButtonsApp = ({
       <button onClick={() => handleClick('api', handleRoute)}>
         Ver App Crud Api
       </button>
-      <button onClick={() => handleClick('song', handleRoute)}>
-        Ver App Song Search
-      </button>
+      <button onClick={handleSongSearch}>Ver App Song Search</button>
     </section>
   )
 }
