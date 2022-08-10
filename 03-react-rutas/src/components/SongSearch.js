@@ -1,5 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { HashRouter, Link, Route, Routes } from 'react-router-dom'
+import React, { useState, useEffect, useContext } from 'react'
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Routes,
+} from 'react-router-dom'
+import LocalStorageContext from '../context/LocalStorajeContext'
 import { helpHttp } from '../helpers/helpHttp'
 import Error404 from '../pages/Error404'
 import SongPage from '../pages/SongPage'
@@ -8,7 +14,7 @@ import SongDetails from './SongDetails'
 import SongForm from './SongForm'
 import SongTable from './SongTable'
 
-let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [] // Leer del Local Storage
+// let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [] // Leer del Local Storage
 
 const SongSearch = () => {
   // Variables de estado
@@ -16,8 +22,9 @@ const SongSearch = () => {
   const [lyric, setLyric] = useState(null)
   const [bio, setBio] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [mySongs, setMySongs] = useState(mySongsInit) // Variable del Local Store
+  //const [mySongs, setMySongs] = useState(mySongsInit) // Variable del Local Store
 
+  const { mySongs, setMySongs } = useContext(LocalStorageContext)
   useEffect(() => {
     if (search === null) return
 
@@ -80,11 +87,12 @@ const SongSearch = () => {
   }
 
   return (
-    <div>
-      <HashRouter basename='canciones'>
-        <header>
-          <h2>Song Search</h2>
-          <Link to='/'>Home</Link>
+    <div className='song-search'>
+      <Router>
+        <header className='section-page'>
+          <h2>App Song Search</h2>
+          <p>Busca tus canciones favoritas y agregalas a lista de favoritas</p>
+          <NavLink to='/'>Home</NavLink>
         </header>
         {loading && <Loader />}
         <article className='grid-1-2'>
@@ -97,10 +105,7 @@ const SongSearch = () => {
                     handleSearch={handleSearch}
                     handleSaveSong={handleSaveSong}
                   />
-                  <SongTable
-                    mySongs={mySongs}
-                    handleDeleteSong={handleDeleteSong}
-                  />
+                  <SongTable handleDeleteSong={handleDeleteSong} />
                   {search && !loading && (
                     <SongDetails search={search} lyric={lyric} bio={bio} />
                   )}
@@ -111,7 +116,7 @@ const SongSearch = () => {
             <Route path='/*' element={<Error404 />} />
           </Routes>
         </article>
-      </HashRouter>
+      </Router>
     </div>
   )
 }

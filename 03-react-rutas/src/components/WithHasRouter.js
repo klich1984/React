@@ -13,7 +13,7 @@ import PrivateRoute from './PrivateRoute'
 
 const WithHasRouter = () => {
   return (
-    <div>
+    <div className='section-page'>
       <HashRouter className='app-container-router'>
         <h2>
           Página realizada con <i>Hash Router</i>

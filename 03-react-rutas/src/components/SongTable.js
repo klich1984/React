@@ -1,8 +1,12 @@
+import { useContext } from 'react'
+import LocalStorageContext from '../context/LocalStorajeContext'
 import SongTableRow from './SongTableRow'
 
-const SongTable = ({ mySongs, handleDeleteSong }) => {
+const SongTable = ({ handleDeleteSong }) => {
+  const { mySongs } = useContext(LocalStorageContext)
+
   return (
-    <div>
+    <div className='song-table'>
       <h3>Mis Canciones Favoritas</h3>
       <table>
         <thead>

@@ -18,7 +18,7 @@ import PrivateRoute from './PrivateRoute'
 
 const WithRouter = () => {
   return (
-    <div className='app-container-router'>
+    <div className='app-container-router section-page'>
       <Router>
         <h2>
           Página realizada con <i>BrowserRouter</i>
