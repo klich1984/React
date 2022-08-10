@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { HashRouter, Link, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Routes,
+} from 'react-router-dom'
 import { helpHttp } from '../helpers/helpHttp'
 import Error404 from '../pages/Error404'
 import SongPage from '../pages/SongPage'
@@ -80,11 +85,12 @@ const SongSearch = () => {
   }
 
   return (
-    <div>
-      <HashRouter basename='canciones'>
-        <header>
-          <h2>Song Search</h2>
-          <Link to='/'>Home</Link>
+    <div className='song-search'>
+      <Router>
+        <header className='section-page'>
+          <h2>App Song Search</h2>
+          <p>Busca tus canciones favoritas y agregalas a lista de favoritas</p>
+          <NavLink to='/'>Home</NavLink>
         </header>
         {loading && <Loader />}
         <article className='grid-1-2'>
@@ -111,7 +117,7 @@ const SongSearch = () => {
             <Route path='/*' element={<Error404 />} />
           </Routes>
         </article>
-      </HashRouter>
+      </Router>
     </div>
   )
 }

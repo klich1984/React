@@ -185,7 +185,9 @@ nav .list-menu li:nth-child(odd) {
 }
 
 /* Crud API */
-.crud-api {
+.crud-api,
+.song-search,
+.song-table {
   font-size: var(--12-16);
   margin-bottom: 2rem;
 }
@@ -203,10 +205,53 @@ nav .list-menu li:nth-child(odd) {
   justify-content: center;
 }
 
-.crud-api form {
+.crud-api form,
+.song-search form {
   max-width: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Song Search */
+.song-search header {
+  background-color: #fff;
+}
+
+.song-search .song-table h3 {
+  margin: 2rem 0 1rem;
+}
+
+.song-artist {
+  margin-top: 3rem;
+}
+
+.container-figure img {
+  max-width: 250px;
+}
+
+.biography {
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.biography h3 {
+  text-align: center;
+}
+
+.song-table tr td:first-child {
+  min-width: 50px;
+}
+.song-table tr td img {
+  object-fit: cover;
+  height: 40px;
+}
+
+.container-actions {
+  display: flex;
+}
+
+.container-actions button {
+  padding: 0.5rem;
 }
 
 /* Descktop */
@@ -226,7 +271,21 @@ nav .list-menu li:nth-child(odd) {
   }
 
   /* Crud API */
-  .crud-api form {
+  .crud-api form,
+  .song-search form {
     max-width: 450px;
+  }
+
+  /* Song Search */
+  .song-search .song-table h3 {
+    margin-top: 0;
+  }
+
+  .song-artist {
+    margin-top: 0;
+  }
+
+  .container-actions button {
+    padding: 0.5rem 1rem;
   }
 }

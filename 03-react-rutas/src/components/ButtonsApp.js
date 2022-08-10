@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import localStorageContext from '../context/LocalStorajeContext'
 
 const ButtonsApp = ({
   setShowRouter,
@@ -7,7 +8,9 @@ const ButtonsApp = ({
   setShowCrudApi,
   handleRoute,
 }) => {
+  const { getLocalStorage } = useContext(localStorageContext)
   const handleClick = (nameFunction, handleRoute) => {
+    getLocalStorage()
     handleRoute()
     // Reset values
     setShowRouter(false)

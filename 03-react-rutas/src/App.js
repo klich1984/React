@@ -8,6 +8,7 @@ import ButtonsApp from './components/ButtonsApp'
 import WithHasRouter from './components/WithHasRouter'
 import CrudApi from './components/CrudApi'
 import SongSearch from './components/SongSearch'
+import { LocalStorageProvider } from './context/LocalStorajeContext'
 
 function App() {
   const [showRouter, setShowRouter] = useState(false)
@@ -22,17 +23,23 @@ function App() {
       <Header />
       <main>
         <ConceptosBasicos />
-        <ButtonsApp
-          setShowRouter={setShowRouter}
-          setShowHasRouter={setShowHasRouter}
-          setShowSongsearch={setShowSongsearch}
-          setShowCrudApi={setShowCrudApi}
-          handleRoute={handleRoute}
-        />
+        <LocalStorageProvider>
+          <ButtonsApp
+            setShowRouter={setShowRouter}
+            setShowHasRouter={setShowHasRouter}
+            setShowSongsearch={setShowSongsearch}
+            setShowCrudApi={setShowCrudApi}
+            handleRoute={handleRoute}
+          />
+        </LocalStorageProvider>
         {showRouter && <WithRouter />}
         {showHasRouter && <WithHasRouter />}
         {showCrudApi && <CrudApi />}
-        {showSongSearch && <SongSearch />}
+        {showSongSearch && (
+          <LocalStorageProvider>
+            <SongSearch />
+          </LocalStorageProvider>
+        )}
       </main>
       <Footer />
     </div>

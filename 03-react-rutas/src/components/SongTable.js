@@ -2,7 +2,7 @@ import SongTableRow from './SongTableRow'
 
 const SongTable = ({ mySongs, handleDeleteSong }) => {
   return (
-    <div>
+    <div className='song-table'>
       <h3>Mis Canciones Favoritas</h3>
       <table>
         <thead>

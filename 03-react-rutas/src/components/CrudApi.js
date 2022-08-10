@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
-  HashRouter,
   NavLink,
   Route,
   Routes,
@@ -15,9 +14,6 @@ import Loader from './Loader'
 import Message from './Message'
 
 const CrudApi = () => {
-  let activeStyle = {
-    textDecoration: 'underline',
-  }
   // const [db, setDb] = useState([]) cambio para renderizar la tabla dinamicamente
   const [db, setDb] = useState(null)
   // estado para saber si vamos a actualizar o crear. null inserccion, true actualización
@@ -123,18 +119,8 @@ const CrudApi = () => {
         <header className='section-page'>
           <h2>CRUD API con Rutas</h2>
           <nav>
-            <NavLink
-              to='/'
-              // style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-              Santos
-            </NavLink>
-            <NavLink
-              to='/agregar'
-              // style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-              Agregar
-            </NavLink>
+            <NavLink to='/'>Santos</NavLink>
+            <NavLink to='/agregar'>Agregar</NavLink>
           </nav>
         </header>
         <Routes>
