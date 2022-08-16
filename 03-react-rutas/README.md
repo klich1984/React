@@ -5,6 +5,10 @@ Following the course of REACT ([Link course](https://www.youtube.com/watch?v=MPL
 
 - Concepts of the React Router DOM, in general, realized with BrowserRoute.
 
+## App gif view
+
+![WithBrowserRouter](./src/assets/ReactApp.gif)
+
 ## App with BrowserRoute
 
 ![WithBrowserRouter](./src/assets/BrowseRouter.jpg)
