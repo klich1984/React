@@ -1,10 +1,26 @@
+.btn {
+  margin: 1.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #1588f4;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .container-color-picker {
   display: grid;
   place-items: center;
   text-align: center;
 }
 
-.colo-picker-color {
+.container-color-picker h2 {
+  margin: 0;
+}
+
+.color-picker-color {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   color: #fff;
@@ -21,4 +37,13 @@
   border-radius: 12px;
   letter-spacing: 8px;
   border: 1px solid #000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.color-item {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
 }
