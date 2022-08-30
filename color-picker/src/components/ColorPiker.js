@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ColorPicker.css'
+import Colors from './Colors'
 
 const ColorPiker = () => {
   let dataStorage = JSON.parse(localStorage.getItem('colorPicker')) || []
@@ -12,17 +13,20 @@ const ColorPiker = () => {
     let value = e.target.value
     setColor(value)
   }
-  // console.log(storage)
 
   const handleClickBtn = () => {
-    // if (storage.indexOf(color) === -1) {
-    //   let data = [...storage, color]
-    //   setStorage(data)
-    // }
-    console.log(storage.includes(color))
+    // Find if it's already saved
     if (storage.includes(color)) return
+
     let data = [...storage, color]
     setStorage(data)
+  }
+
+  const handleDelete = (color) => {
+    let conf = window.confirm(`Esta seguro de eliminar el color "${color}"`)
+    if (!conf) return
+    let newStorage = storage.filter((el) => el !== color)
+    setStorage(newStorage)
   }
 
   // Update LocalStorage
@@ -53,19 +57,7 @@ const ColorPiker = () => {
       <button onClick={handleClickBtn} className='btn'>
         Save Color
       </button>
-      <div className='container-save-colors'>
-        {storage.map((el) => (
-          <span
-            className='color-item'
-            style={{
-              backgroundColor: `${el} `,
-            }}
-            key={el}
-          >
-            {el}
-          </span>
-        ))}
-      </div>
+      <Colors storage={storage} handleDelete={handleDelete} />
     </div>
   )
 }
