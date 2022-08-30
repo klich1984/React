@@ -1,0 +1,95 @@
+:root {
+  --text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px,
+    rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px,
+    rgb(0, 0, 0) -0.832294px 1.81859px 0px,
+    rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px,
+    rgb(0, 0, 0) -1.87291px -0.701566px 0px,
+    rgb(0, 0, 0) -1.30729px -1.5136px 0px,
+    rgb(0, 0, 0) -0.421592px -1.95506px 0px,
+    rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+    rgb(0, 0, 0) 1.41734px -1.41108px 0px,
+    rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+  --box-shadown-btn: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.btn {
+  margin: 1.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #1588f4;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--box-shadown-btn);
+  transition: all 0.3s ease-in;
+}
+
+.btn:hover {
+  color: #fff;
+  transform: scale(0.95);
+}
+
+.container-color-picker {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.container-color-picker h2 {
+  margin: 0;
+}
+
+.color-picker-color {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: var(--text-shadow);
+  border-radius: 12px;
+  letter-spacing: 8px;
+  border: 1px solid #000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.color-item {
+  display: inline-block;
+  /* margin: 0.5rem; */
+  padding: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  width: 120px;
+  text-shadow: var(--text-shadow);
+  letter-spacing: 2px;
+}
+
+.container-save-colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.container-save-colors > div {
+  display: flex;
+  align-items: center;
+  border: thin solid #000;
+}
+
+.img-del {
+  filter: drop-shadow(0px -3px 2px #000);
+  width: 25px;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.img-del:hover {
+  transform: scale(1.1);
+}
